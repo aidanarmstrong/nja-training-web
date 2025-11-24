@@ -14,8 +14,7 @@ import Testimonials from "./Testimonials";
 import { FcCheckmark } from "react-icons/fc";
 import Contact from "./Contact";
 import CoursesSection from "./Courses";
-import courses from './courses.json';
-
+import courses from './data';
 
 
 

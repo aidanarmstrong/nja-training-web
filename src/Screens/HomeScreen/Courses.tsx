@@ -1,4 +1,4 @@
-import courses from './courses.json';
+import courses from './data';
 
 const CoursesSection = () => {
     return (
@@ -23,7 +23,7 @@ const CoursesSection = () => {
                                 className="h-48 w-full rounded-t-xl mb-3 flex items-center justify-center"
                                 aria-hidden="true"
                             >
-                                <img src={new URL(course.image, import.meta.url).href} alt={course.title} className="h-full w-full object-cover rounded-t-xl" />
+                                <img src={course.image} alt={course.title} className="h-full w-full object-cover rounded-t-xl" />
                             </div>
                             <div className="px-6 pb-6">
 
