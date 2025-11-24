@@ -43,7 +43,7 @@ const Hero = ({ courses }: { courses: { id: string; title: string }[] }) => {
                         </h1>
 
                         <p className="mt-4 text-lg text-slate-200 max-w-xl">
-                            Hands-on, accredited, and practical — master excavators with precision GPS guidance.
+                            Hands-on, accredited, and practical — master excavators with precision GPS guidance & tilt rotator familiarisation. <b><br/>Get to know the controls</b> 
                         </p>
 
 
@@ -63,7 +63,7 @@ const Hero = ({ courses }: { courses: { id: string; title: string }[] }) => {
                         </div>
 
                         <div className="mt-8 text-sm text-slate-300">
-                            Small, focused groups • Convenient Perth CBD • Fully accredited VOCs
+                            Small, focused groups • Conveniently located 30 minutes from Perth CBD • Fully accredited Tickets & VOCs
                         </div>
 
                     </div>
@@ -130,7 +130,7 @@ const Information = () => {
                 </p>
 
                 <p className="mb-4">
-                    We provide <strong>1-on-1 personalised training</strong>, ensuring every student receives focused, hands-on guidance. Whether you’re new to the industry or an experienced operator looking to upskill, our courses help you progress into higher-paid opportunities.
+                    We provide <strong>1-on-1 focused training</strong>, ensuring every student receives focused, hands-on guidance. Whether you’re new to the industry or an experienced operator looking to upskill, our courses help you progress into higher-paid opportunities.
                 </p>
 
                 <p className="mb-4">
@@ -142,7 +142,7 @@ const Information = () => {
                 </p>
 
                 <p>
-                    With over <strong>12 years of senior operating experience</strong> and accredited assessors on our team, you’ll learn from trainers who have worked across civil construction, mining, and machinery operations. Our <strong>hands-on, practical, up-to-date training</strong> ensures you leave confident, capable, and job-ready.
+                    With over <strong>12 years of senior operating experience</strong> and certified trainer & assessors on our team, you’ll learn from trainers who have worked across civil construction, mining, and machinery operations. Our <strong>hands-on, practical, up-to-date training</strong> ensures you leave confident, capable, and job-ready.
                 </p>
             </div>
         </section>
