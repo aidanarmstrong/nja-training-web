@@ -1,6 +1,6 @@
 import { FaFacebookF, FaInstagram, FaTiktok} from 'react-icons/fa';
 import { Logo } from '../../assets';
-import FullTiltLogo from '../../assets/images/FTT_Logo.png';
+import FullTiltLogo from '../../assets/images/FTT_LOGO.png';
 
 export const Footer = () => {
 
