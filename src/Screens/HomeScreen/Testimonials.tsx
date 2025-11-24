@@ -27,7 +27,7 @@ const Testimonials = () => {
 
     return (
         <section id="testimonials" className="py-24 bg-gray-50">
-            <div className="max-w-3xl mx-auto px-6 text-center">
+            <div className="max-w-4xl mx-auto px-6 text-center">
                 <h2 className="text-3xl font-bold text-slate-900 mb-4">What Our Students Say</h2>
                 <p className="text-slate-600 mb-12">
                     Genuine feedback from operators, supervisors, and site managers who completed our courses.
@@ -37,12 +37,12 @@ const Testimonials = () => {
                     {/* Left Chevron */}
                     <button
                         onClick={prevSlide}
-                        className="absolute left-[-40px] bg-white p-2 rounded-full shadow hover:bg-gray-100 transition"
+                        className="absolute left-0 bg-white p-2 rounded-full shadow hover:bg-gray-100 transition"
                     >
                         <ChevronLeftIcon size={28} />
                     </button>
 
-                    <div className="w-full overflow-hidden">
+                    <div className="w-[70%] overflow-hidden">
                         <AnimatePresence initial={false}>
                             <motion.div
                                 key={Reviews[current].id}
@@ -76,7 +76,7 @@ const Testimonials = () => {
                     {/* Right Chevron */}
                     <button
                         onClick={nextSlide}
-                        className="absolute right-[-40px] bg-white p-2 rounded-full shadow hover:bg-gray-100 transition"
+                        className="absolute right-0 bg-white p-2 rounded-full shadow hover:bg-gray-100 transition"
                     >
                         <ChevronRightIcon size={28} />
                     </button>

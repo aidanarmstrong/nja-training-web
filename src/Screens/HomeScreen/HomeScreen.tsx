@@ -8,45 +8,15 @@
 
 import { Footer, Navbar } from "../../Components";
 import HeroVideo from "../../assets/videos/hero-video.mp4";
-import Course1Image from "../../assets/images/course-1.png";
+import Excavator from "../../assets/images/digger.png";
+import PanVideo from "../../assets/videos/pan-yard.mp4"
 import Testimonials from "./Testimonials";
 import { FcCheckmark } from "react-icons/fc";
 import Contact from "./Contact";
+import CoursesSection from "./Courses";
+import courses from './courses.json';
 
-const courses = [
-    {
-        id: 'gps-machine-control',
-        title: 'GPS Machine Control Training',
-        summary: 'Practical, accredited training for GPS-guided earthmoving equipment. Ideal for machine operators and site supervisors.',
-        duration: '1 day',
-        price: 'From $749',
-        image: Course1Image
-    },
-    {
-        id: 'excavator-operator',
-        title: 'Excavator Operator Course',
-        summary: 'Hands-on excavator courses from beginner to advanced. Includes safety, maintenance and operational efficiency topics.',
-        duration: '1 – 2 days',
-        price: 'From $1199',
-        image: Course1Image
-    },
-    {
-        id: 'vocs-certification',
-        title: 'VOC / Plant Operator Ticketing',
-        summary: 'Vocationally recognised certification for plant and machinery operators to meet industry standards.',
-        duration: '1 day',
-        price: 'From $599',
-        image: Course1Image
-    },
-    {
-        id: 'custom-corp',
-        title: 'Bespoke Corporate Training',
-        summary: 'On-site tailored programmes for companies — safety, operations, and supervisory training delivered to your staff.',
-        duration: 'Bespoke',
-        price: 'Quote on request',
-        image: Course1Image
-    }
-];
+
 
 
 const Hero = ({ courses }: { courses: { id: string; title: string }[] }) => {
@@ -70,14 +40,13 @@ const Hero = ({ courses }: { courses: { id: string; title: string }[] }) => {
                     {/* Left content */}
                     <div>
                         <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
-                            Premium Excavator Training & GPS Machine Control Certifications
+                            1-on-1 Leica 3D GPS Excavator Training
                         </h1>
 
                         <p className="mt-4 text-lg text-slate-200 max-w-xl">
-                            Industry-leading training for excavators, GPS machine control and VOC
-                            assessments — practical, accredited and delivered by experienced
-                            trainers across Australia.
+                            Hands-on, accredited, and practical — master excavators with precision GPS guidance.
                         </p>
+
 
                         <div className="mt-8 flex flex-wrap gap-4">
                             <a
@@ -95,8 +64,9 @@ const Hero = ({ courses }: { courses: { id: string; title: string }[] }) => {
                         </div>
 
                         <div className="mt-8 text-sm text-slate-300">
-                            Small group discounts • On-site delivery available • Accredited VOCs
+                            Small, focused groups • Convenient Perth CBD • Fully accredited VOCs
                         </div>
+
                     </div>
 
                     {/* Right side — enquiry card */}
@@ -149,90 +119,37 @@ const Hero = ({ courses }: { courses: { id: string; title: string }[] }) => {
 };
 
 const Information = () => {
-    return(
-        <>
-            <section className="nja-training-section py-12 px-6 bg-gray-50">
-                <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl font-bold mb-6">Why NJA Training Solutions</h2>
-                    <p className="mb-4">
-                        Located in the heart of Perth CBD, NJA Training Solutions is your trusted provider for professional, high-quality training and assessment services. We specialise in mobile plant and civil construction training, high-risk WorkSafe licensing, and VOCs, tailored for both new and experienced operators. Training can be delivered on-site at your workplace or at our central Perth facility for maximum convenience.
-                    </p>
-                    <p className="mb-4">
-                        Our team of highly qualified trainers has extensive experience in the earthmoving and training industries. We are dedicated to providing practical, flexible, and supportive training to help you or your team gain the skills and qualifications needed to succeed in your field.
-                    </p>
-                    <p>
-                        With our Perth CBD location, students can easily access our facilities, combining hands-on practical experience with industry-standard knowledge and licensing requirements.
-                    </p>
-                </div>
-            </section>
-        </>
-    )
-}
-
-const CoursesSection = () => {
     return (
-        <section id="courses" className="py-20 bg-white">
-            <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold">Our Featured Courses</h2>
-                    <p className="mt-3 text-primary max-w-2xl mx-auto">
-                        Practical, accredited and designed for immediate on-site use.
-                        Select any course for full details, units and upcoming dates.
-                    </p>
-                </div>
+        <section className="nja-training-section py-12 px-6 bg-gray-50">
+            <div className="max-w-4xl mx-auto">
+                <h2 className="text-3xl font-bold mb-6">
+                    Why NJA Training Solutions?
+                </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {courses.map((course) => (
-                        <article
-                            key={course.id}
-                            className="border rounded-2xl hover:shadow-xl transition bg-white flex flex-col justify-between"
-                        >
-                            {/* Course Image */}
-                            <div
-                                className="h-48 w-full rounded-t-xl mb-3 flex items-center justify-center"
-                                aria-hidden="true"
-                            >
-                                <img src={course.image} alt={course.title} className="h-full w-full object-cover rounded-t-xl" />
-                            </div>
-                            <div className="px-6 pb-6">
+                <p className="mb-4">
+                    NJA Training Solutions delivers <strong>industry-recognised, career-boosting training</strong> for operators who want to stand out. Conveniently located just 30 minutes from Perth CBD, our courses are flexible and designed around your schedule.
+                </p>
 
-                                {/* Title */}
-                                <h3 className="text-xl font-bold text-slate-800 mb-3">
-                                    {course.title}
-                                </h3>
+                <p className="mb-4">
+                    We provide <strong>1-on-1 personalised training</strong>, ensuring every student receives focused, hands-on guidance. Whether you’re new to the industry or an experienced operator looking to upskill, our courses help you progress into higher-paid opportunities.
+                </p>
 
-                                {/* Summary */}
-                                <p className="text-slate-600 text-base mb-5">{course.summary}</p>
+                <p className="mb-4">
+                    NJA Training Solutions is Western Australia’s <strong>only facility offering Tilt-Rotator and Leica 3D GPS machine control training</strong> — two of the most in-demand skills in modern civil and earthmoving operations.
+                </p>
 
-                                {/* Duration & Price */}
-                                <div className="flex items-center justify-between text-slate-700 font-medium mb-4">
-                                    <span>{course.duration || "Duration TBD"}</span>
-                                    <strong>{course.price || "Price TBD"}</strong>
-                                </div>
+                <p className="mb-4">
+                    All courses are <strong>delivered under NJA Training Solutions</strong> and accredited by Full Tilt Training Solutions (RTO: 52793). Statements of Attainment are issued by Full Tilt Training Solutions and being <strong>nationally recognised</strong> ensures they are accepted by employers across Australia.
+                </p>
 
-                                {/* Links */}
-                                <div className="flex gap-3 mt-auto">
-                                    <a
-                                        href={`#${course.id}`}
-                                        className="text-primary font-semibold underline text-base"
-                                    >
-                                        Course details
-                                    </a>
-                                    <a
-                                        href={`mailto:hello@njatrainingsolutions.com?subject=COURSE: ${encodeURIComponent(course.title)}&body=${encodeURIComponent("Are there any available spaces for this course?")}`}
-                                        className="ml-auto inline-block bg-primary text-white px-4 py-2 rounded-lg text-base font-medium hover:bg-primary/90 transition"
-                                    >
-                                        Book now
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-                    ))}
-                </div>
+                <p>
+                    With over <strong>12 years of senior operating experience</strong> and accredited assessors on our team, you’ll learn from trainers who have worked across civil construction, mining, and machinery operations. Our <strong>hands-on, practical, up-to-date training</strong> ensures you leave confident, capable, and job-ready.
+                </p>
             </div>
         </section>
     );
 };
+
 
 
 const AboutSection = () => {
@@ -249,29 +166,47 @@ const AboutSection = () => {
                         Our mission is simple: to turn motivated individuals into skilled, safety-conscious, and highly employable workers. Whether you’re new to the industry or looking to upskill, we deliver accredited training and assessments tailored to real-world conditions, helping you stand out in mining, construction, or civil projects across Australia.
                     </p>
 
-                   <ul className="mt-6 space-y-4 text-slate-700">
+                    <ul className="mt-6 space-y-4 text-slate-700">
                         {[
-                            "Accredited training and VOCs for mobile plant operators",
+                            "One-on-one personalised training tailored to your needs",
                             "Hands-on experience with excavators, loaders, and GPS-controlled machinery",
                             "Small group sizes for focused, practical learning",
-                            "Flexible delivery: on-site at your workplace or at our Perth CBD facility",
-                            "Corporate packages and flexible scheduling to suit your team",
+                            "Only 30 minutes from Perth CBD",
+                            "Ideal for operators aiming to upskill for higher-paid opportunities",
                             "Designed to help you become safer, more competent, and highly employable",
                         ].map((item, index) => (
                             <li key={index} className="flex items-start gap-3">
-                                <FcCheckmark className="mt-1 flex-shrink-0" />
-                                <span>{item}</span>
+                                <FcCheckmark className="mt-1 text-xl flex-shrink-0" />
+                                <p className="leading-relaxed">{item}</p>
                             </li>
                         ))}
                     </ul>
+
                 </div>
 
                 <div>
                     <div
-                        className="w-full h-96 bg-[url('/placeholder-about.jpg')] bg-cover bg-center bg-gray-300 rounded-lg shadow-md flex justify-center items-center"
+                        className="w-full h-96 rounded-lg shadow-md overflow-hidden relative flex justify-center items-center"
                         aria-hidden="true"
-                    >Image goes here</div>
+                    >
+                        {/* Background video */}
+                        <video
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="absolute w-full h-full object-cover"
+                        >
+                            <source src={PanVideo} type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+
+                        {/* Optional overlay */}
+                        <div className="absolute inset-0 bg-black bg-opacity-10"></div>
+
+                    </div>
                 </div>
+
             </div>
         </section>
     );
@@ -280,12 +215,33 @@ const AboutSection = () => {
 
 
 const HomeScreen = () => {
+
     return (
         <div className="font-inter antialiased text-slate-900">
             <Navbar />
             <main>
                 <Hero courses={courses} />
                 <Information/>
+                <div className="relative w-full h-64 md:h-96 overflow-hidden">
+                    {/* Background image */}
+                    <img
+                        src={Excavator} // replace PanVideo with your image import or URL
+                        alt="Header Background"
+                        className="absolute w-full h-full object-cover"
+                    />
+
+                    {/* Overlay to darken image for better text contrast */}
+                    <div className="absolute inset-0 bg-black bg-opacity-15"></div>
+
+                    {/* CTA content */}
+                    <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+                        <h2 className="text-2xl md:text-4xl font-bold mt-24">
+                            Ready to get started?
+                        </h2>
+                    </div>
+                </div>
+
+
                 <CoursesSection />
                 <AboutSection />
                 <Testimonials />

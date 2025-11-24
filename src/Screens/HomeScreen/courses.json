@@ -1,0 +1,50 @@
+[
+  {
+    "id": "ict-550",
+    "title": "ICT Operator Training (Integrated Tool Carrier)",
+    "summary": "Practical ICT operator training covering machine setup, attachments, safety and site operation.",
+    "duration": "1 day",
+    "price": "From $550",
+    "image": "../../assets/images/course-1.png"
+  },
+  {
+    "id": "14t-track-gps",
+    "title": "14-Ton Track Machine Training (GPS)",
+    "summary": "Hands-on training for operating a 14-ton tracked excavator with GPS guidance.",
+    "duration": "1 day",
+    "price": "From $750",
+    "image": "../../assets/images/gps-3.png"
+  },
+  {
+    "id": "trench-box-install",
+    "title": "Trench Support & Trench Box Install",
+    "summary": "Learn how to install trench supports and build and place trench boxes safely and correctly.",
+    "duration": "1 day",
+    "price": "From $450",
+    "image": "../../assets/images/course-3.png"
+  },
+  {
+    "id": "gps-grader-addon",
+    "title": "GPS & Grader Attachment Add-On",
+    "summary": "Optional add-on for GPS machine control and grader attachment operation. Can be added to any machine course.",
+    "duration": "Add-on",
+    "price": "From $950",
+    "image": "../../assets/images/course-4.png"
+  },
+  {
+    "id": "loader-training",
+    "title": "Loader Operator Training",
+    "summary": "Straightforward loader operator course covering controls, site work and material handling.",
+    "duration": "1 day",
+    "price": "From $550",
+    "image": "../../assets/images/loader-1.png"
+  },
+  {
+    "id": "wheeled-excavator-550",
+    "title": "Wheeled Excavator Training",
+    "summary": "Operator training on wheeled excavators including movement, setup and safe operation.",
+    "duration": "1 day",
+    "price": "From $550",
+    "image": "../../assets/images/course-5.png"
+  }
+]

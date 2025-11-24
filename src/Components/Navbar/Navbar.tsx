@@ -197,7 +197,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                         </Link>
 
                         <Link
-                            to="/courses"
+                            to="/#courses"
                             onClick={handleMobileNavClick}
                             className="text-4xl font-bold text-white hover:text-gray-300 z-10"
                         >
@@ -205,7 +205,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                         </Link>
 
                         <Link
-                            to="/about"
+                            to="/#about"
                             onClick={handleMobileNavClick}
                             className="text-4xl font-bold text-white hover:text-gray-300 z-10"
                         >
@@ -213,20 +213,20 @@ export const Navbar: React.FC<NavbarProps> = ({
                         </Link>
 
                         <Link
-                            to="/contact"
+                            to="/#contact"
                             onClick={handleMobileNavClick}
                             className="text-4xl font-bold text-white hover:text-gray-300 z-10"
                         >
                             Contact
                         </Link>
 
-                        <Link
-                            to="/book"
+                        <a
+                            href="tel:0497083537"
                             onClick={handleMobileNavClick}
                             className="text-4xl font-bold text-primary hover:text-gray-300 z-10"
                         >
                             Book Now
-                        </Link>
+                        </a>
                     </motion.div>
                 )}
             </AnimatePresence>

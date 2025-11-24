@@ -1,5 +1,6 @@
 import { FaFacebookF, FaInstagram, FaTiktok} from 'react-icons/fa';
 import { Logo } from '../../assets';
+import FullTiltLogo from '../../assets/images/FTT_Logo.png';
 
 export const Footer = () => {
 
@@ -7,13 +8,32 @@ export const Footer = () => {
         <footer className="bg-slate-800 text-slate-300 py-10">
             <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div>
-                     {/* Logo Block */}
+                    {/* Logo Block */}
                     <div className="flex items-center justify-start mb-2">
                         <img className="h-12 w-auto" src={Logo} alt="Logo" />
                     </div>
+
                     <h4 className="text-white font-semibold">NJA Training Solutions</h4>
-                    <p className="mt-2 text-sm">Practical training for plant operators. Accredited courses, experienced trainers and flexible delivery.</p>
+                    <p className="mt-2 text-sm">
+                        Practical, hands-on training for plant operators. Experienced trainers, flexible delivery, and industry-ready skills.
+                    </p>
+
+                    <p className="mt-2 text-sm text-slate-300">
+                        All nationally recognised units are delivered by and accredited through
+                        <span className="font-semibold text-white"> Full Tilt Training Solutions (RTO 52793)</span>.
+                        Statements of Attainment are issued by Full Tilt, ensuring your qualifications are recognised across Australia.
+                    </p>
+
+                    <div className="flex justify-center sm:justify-start">
+                        <img 
+                            src={FullTiltLogo}
+                            alt="Full Tilt Training Solutions Logo"
+                            className="max-w-[180px] w-full"
+                        />
+                    </div>
+
                 </div>
+
 
                 <div>
                     <h4 className="text-white font-semibold">Quick links</h4>
