@@ -39,7 +39,7 @@ const Hero = ({ courses }: { courses: { id: string; title: string }[] }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center w-full">
                     {/* Left content */}
                     <div>
-                        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
+                        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mt-20 md:mt-0">
                             1-on-1 Leica 3D GPS Excavator Training
                         </h1>
 
