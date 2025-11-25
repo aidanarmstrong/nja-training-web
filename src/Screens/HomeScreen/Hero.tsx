@@ -20,36 +20,23 @@ const Hero = () => {
             <div className="relative max-w-7xl mx-auto px-6 lg:px-12 py-36 md:py-64">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 
-                    {/* LEFT — CONTENT */}
+                   {/* LEFT — CONTENT */}
                     <div className="lg:col-span-7">
                         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-xl">
                             Premium 1-on-1 GPS Excavator Training
                         </h1>
 
                         <p className="mt-6 text-lg md:text-xl text-slate-200 max-w-xl leading-relaxed">
-                            Hands-on & fully accredited. Master Leica 3D GPS, tilt rotators, safety,
-                            and precision excavation with real site scenarios.
+                            Hands-on, fully accredited training that lets you master Leica 3D GPS, tilt rotators, safety, and precision excavation—all on real site scenarios.
                         </p>
 
-                        <div className="mt-8 flex flex-wrap gap-4">
-                            <a
-                                href="#courses"
-                                className="bg-primary hover:bg-primary/90 px-7 py-3 rounded-lg text-white font-semibold shadow-lg transition"
-                            >
-                                View Courses
-                            </a>
-                            <a
-                                href="#contact"
-                                className="border border-white/70 hover:bg-white/10 px-7 py-3 rounded-lg text-white font-semibold transition"
-                            >
-                                Request a Quote
-                            </a>
-                        </div>
-
-                        <p className="mt-6 text-sm text-slate-300">
-                            Accredited training • 1-on-1 sessions • 30 minutes from Perth CBD
-                        </p>
+                        <ul className="mt-6 space-y-2 text-slate-300 max-w-md">
+                            <li>• Fully accredited, 1-on-1 training</li>
+                            <li>• Practical, hands-on site experience</li>
+                            <li>• Only 30 minutes from Perth CBD</li>
+                        </ul>
                     </div>
+
 
                     {/* RIGHT — PROFESSIONAL BENEFITS PANEL */}
                     <div className="lg:col-span-5 flex justify-center lg:justify-end">
@@ -77,7 +64,7 @@ const Hero = () => {
                                 href="/courses/all"
                                 className="mt-4 block bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-lg shadow-lg text-center transition"
                             >
-                                See All Courses
+                                Browse All Courses
                             </a>
                         </div>
                     </div>

@@ -17,6 +17,7 @@ import CoursesSection from "./Courses";
 import Hero from "./Hero";
 import { FaBookmark, FaCommentDots, FaHeart } from "react-icons/fa6";
 import { IoMdShareAlt } from "react-icons/io";
+import { TrustedBy } from "./TrustedBy";
 
 const Information = () => {
     return (
@@ -161,7 +162,7 @@ const HomeScreen = () => {
             <Navbar />
             <main>
                 <Hero />
-                <Information/>
+                <TrustedBy/>
                 <div className="relative w-full h-64 md:h-96 overflow-hidden">
                     {/* Background image */}
                     <img
@@ -184,6 +185,7 @@ const HomeScreen = () => {
 
                 <CoursesSection />
                 <AboutSection />
+                <Information/>
                 <Testimonials />
                 <Contact />
             </main>

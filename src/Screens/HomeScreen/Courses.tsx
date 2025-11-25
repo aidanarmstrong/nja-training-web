@@ -1,4 +1,5 @@
 import courses from "@/data/courses";
+import { FaTrophy } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const CoursesSection = () => {
@@ -10,22 +11,26 @@ const CoursesSection = () => {
                 
                 {/* HEADER */}
                 <div className="text-center mb-14">
-                    <h2 className="text-4xl font-extrabold text-slate-900">
-                        Our Most Popular Training
-                    </h2>
+                    <div className="flex items-center justify-center space-x-3 mb-3">
+                        <FaTrophy className="text-primary text-3xl" />
+                        <h2 className="text-4xl font-extrabold text-slate-900">
+                            Our Most Popular Training
+                        </h2>
+                    </div>
 
-                    <p className="mt-4 text-secondary/70 max-w-2xl mx-auto text-lg">
+                    <p className="text-secondary/70 max-w-2xl mx-auto text-lg">
                         Industry-ready, hands-on and accredited.  
                         Learn the skills employers look for and fast-track your career with our top-rated training programs.
                     </p>
                 </div>
+
 
                 {/* POPULAR COURSES */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {popularCourses.map((course) => (
                         <article
                             key={course.id}
-                            className="border rounded-2xl hover:shadow-xl transition bg-white flex flex-col justify-between overflow-hidden"
+                            className="border rounded-2xl hover:shadow transition bg-white flex flex-col justify-between overflow-hidden"
                         >
                             <img
                                 src={course.image}
@@ -52,7 +57,7 @@ const CoursesSection = () => {
                                     to={`/courses/${course.id}/overview`}
                                     className="w-full block bg-primary text-white px-4 py-3 rounded-lg font-medium hover:bg-primary/90 transition text-center"
                                 >
-                                    Enrol now
+                                    Course Overview
                                 </Link>
                             </div>
                         </article>
@@ -63,9 +68,9 @@ const CoursesSection = () => {
                 <div className="text-center mt-14">
                     <a
                         href="/courses/all"
-                        className="inline-block px-8 py-2 bg-white text-secondary border-2 border-primary font-semibold text-lg rounded-lg shadow-sm hover:bg-primary hover:text-white transition"
+                        className="inline-block px-8 py-2 bg-white text-secondary border-2 border-primary font-semibold text-lg rounded-lg shadow-sm hover:bg-primary/10 hover:text-black transition"
                     >
-                        View All 
+                        Browse All Courses
                     </a>
 
                     <p className="mt-4 text-secondary/60 max-w-xl mx-auto text-sm">

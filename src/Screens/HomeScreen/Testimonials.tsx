@@ -18,7 +18,7 @@ const Testimonials = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrent((prev) => (prev + 1) % length);
-        }, 5000);
+        }, 6000);
         return () => clearInterval(interval);
     }, [length]);
 
@@ -28,58 +28,83 @@ const Testimonials = () => {
     return (
         <section id="testimonials" className="py-24 bg-gray-50">
             <div className="max-w-4xl mx-auto px-6 text-center">
-                <h2 className="text-3xl font-bold text-slate-900 mb-4">What Our Students Say</h2>
-                <p className="text-slate-600 mb-12">
+
+                <h2 className="text-4xl font-extrabold text-slate-900 mb-4">
+                    What Our Students Say
+                </h2>
+
+                <p className="text-slate-600 mb-12 text-lg">
                     Genuine feedback from operators, supervisors, and site managers who completed our courses.
                 </p>
 
                 <div className="relative flex items-center justify-center">
-                    {/* Left Chevron */}
+
+                    {/* Left Button */}
                     <button
                         onClick={prevSlide}
-                        className="absolute left-0 bg-white p-2 rounded-full shadow hover:bg-gray-100 transition"
+                        className="absolute left-0 bg-white p-3 rounded-full shadow-md hover:bg-gray-100 transition"
                     >
-                        <ChevronLeftIcon size={28} />
+                        <ChevronLeftIcon size={26} />
                     </button>
 
-                    <div className="w-[70%] overflow-hidden">
-                        <AnimatePresence initial={false}>
+                    {/* Testimonial Card */}
+                    <div className="w-[80%] md:w-[65%] overflow-hidden">
+                        <AnimatePresence initial={false} mode="wait">
                             <motion.div
                                 key={Reviews[current].id}
                                 initial={{ opacity: 0, x: 50 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -50 }}
-                                transition={{ duration: 0.5 }}
-                                className="w-full bg-white p-8 rounded-xl shadow-md mx-auto"
+                                transition={{ duration: 0.45, ease: "easeOut" }}
+                                className="bg-white px-10 py-8 rounded-2xl shadow-lg"
                             >
-                                <p className="text-slate-700 mb-4">“{Reviews[current].feedback}”</p>
-                                <footer className="text-sm font-semibold text-slate-800 mb-4">
+                                <p className="text-slate-700 text-lg leading-relaxed mb-5">
+                                    “{Reviews[current].feedback}”
+                                </p>
+
+                                <footer className="font-semibold text-slate-800 mb-4">
                                     — {Reviews[current].name}, {Reviews[current].role}
                                 </footer>
-                                <div className="flex justify-center space-x-1">
+
+                                {/* Stars */}
+                                <div className="flex justify-center space-x-1 mt-2">
                                     {Array.from({ length: 5 }).map((_, i) => (
-                                        <svg
+                                        <FaStar
                                             key={i}
-                                            className={`w-5 h-5 ${i < Reviews[current].rating ? "text-yellow-400" : "text-gray-300"}`}
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <FaStar />
-                                        </svg>
+                                            className={`text-xl ${
+                                                i < Reviews[current].rating
+                                                    ? "text-yellow-400"
+                                                    : "text-gray-300"
+                                            }`}
+                                        />
                                     ))}
                                 </div>
                             </motion.div>
                         </AnimatePresence>
                     </div>
 
-                    {/* Right Chevron */}
+                    {/* Right Button */}
                     <button
                         onClick={nextSlide}
-                        className="absolute right-0 bg-white p-2 rounded-full shadow hover:bg-gray-100 transition"
+                        className="absolute right-0 bg-white p-3 rounded-full shadow-md hover:bg-gray-100 transition"
                     >
-                        <ChevronRightIcon size={28} />
+                        <ChevronRightIcon size={26} />
                     </button>
+                </div>
+
+                {/* Carousel Dots */}
+                <div className="flex justify-center mt-8 space-x-3">
+                    {Reviews.map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => setCurrent(index)}
+                            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                                index === current
+                                    ? "bg-primary scale-125"
+                                    : "bg-gray-300 hover:bg-gray-400"
+                            }`}
+                        />
+                    ))}
                 </div>
             </div>
         </section>

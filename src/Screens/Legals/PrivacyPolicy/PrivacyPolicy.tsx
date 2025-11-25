@@ -3,7 +3,7 @@ import { Footer, Navbar } from "../../../Components";
 
 const PrivacyPolicy: React.FC = () => {
     const openEmailClient = () => {
-        window.location.href = "mailto:support@fifoclock.com";
+        window.location.href = "mailto:admin@njatrainingsolutions.com";
     };
 
     return (
@@ -13,113 +13,102 @@ const PrivacyPolicy: React.FC = () => {
                 <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
 
                 <p className="mb-4">
-                    This privacy policy applies to the FIFO Clock app (hereby referred to as
-                    "Application") for mobile devices that was created by HANDY FIND PTY LTD
-                    (hereby referred to as "Service Provider") as an Ad Supported service.
-                    This service is intended for use "AS IS".
+                    This Privacy Policy governs the manner in which NJA Training Solutions 
+                    (hereafter referred to as "Service Provider") collects, uses, maintains, 
+                    and discloses information collected from users of its website 
+                    (hereafter referred to as "Website"). By using the Website, you agree 
+                    to the practices described in this policy.
                 </p>
 
                 <h2 className="text-2xl font-semibold mt-6 mb-3">
-                    Information Collection and Use
+                    Information Collection
                 </h2>
                 <p className="mb-4">
-                    The Application collects information when you download and use it. This
-                    information may include:
+                    The Website may collect certain personally identifiable information 
+                    from users in a lawful and transparent manner. This may include, but is 
+                    not limited to:
                 </p>
                 <ul className="list-disc list-inside mb-4">
-                    <li>Your device's Internet Protocol address (e.g. IP address)</li>
-                    <li>The pages of the Application that you visit</li>
-                    <li>The time and date of your visit, the time spent on those pages</li>
-                    <li>The operating system you use on your mobile device</li>
+                    <li>Name, email address, and contact information provided voluntarily;</li>
+                    <li>Information about bookings or inquiries made through the Website;</li>
+                    <li>Technical data such as IP address, browser type, and pages visited.</li>
                 </ul>
+
+                <h2 className="text-2xl font-semibold mt-6 mb-3">Use of Information</h2>
                 <p className="mb-4">
-                    The Application does not gather precise information about the location
-                    of your mobile device.
+                    The information collected may be used for the following purposes:
                 </p>
+                <ul className="list-disc list-inside mb-4">
+                    <li>Providing and managing services, including training bookings;</li>
+                    <li>Improving the Website and customer experience;</li>
+                    <li>Communicating important updates or promotional offers with your consent;</li>
+                    <li>Complying with legal obligations.</li>
+                </ul>
+
+                <h2 className="text-2xl font-semibold mt-6 mb-3">Third-Party Services</h2>
                 <p className="mb-4">
-                    The Service Provider may use the information you provided to contact you
-                    from time to time to provide you with important information, required
-                    notices, and marketing promotions.
+                    The Website may integrate third-party services such as 
+                    <a href="https://cal.com" target="_blank" rel="noopener noreferrer" className="text-primary underline">
+                        Cal.com
+                    </a> 
+                    for booking and scheduling. By using these services, you acknowledge and agree 
+                    that their own Privacy Policies and Terms of Service also apply.
                 </p>
 
-                <h2 className="text-2xl font-semibold mt-6 mb-3">Third Party Access</h2>
+                <h2 className="text-2xl font-semibold mt-6 mb-3">Data Security</h2>
                 <p className="mb-4">
-                    Only aggregated, anonymized data is periodically transmitted to external
-                    services to aid the Service Provider in improving the Application and
-                    their service. The Service Provider may share your information with
-                    third parties as described in this privacy policy.
+                    The Service Provider implements reasonable technical and organisational measures 
+                    to protect the personal information collected via the Website. However, no 
+                    method of transmission or storage is completely secure, and we cannot guarantee 
+                    absolute security.
                 </p>
 
-                <h2 className="text-2xl font-semibold mt-6 mb-3">Opt-Out Rights</h2>
+                <h2 className="text-2xl font-semibold mt-6 mb-3">Data Retention</h2>
                 <p className="mb-4">
-                    You can stop all collection of information by the Application easily by
-                    uninstalling it. You may use the standard uninstall processes available
-                    as part of your mobile device or via the app marketplace.
-                </p>
-
-                <h2 className="text-2xl font-semibold mt-6 mb-3">Data Retention Policy</h2>
-                <p className="mb-4">
-                    The Service Provider will retain user-provided data for as long as you
-                    use the Application and for a reasonable time thereafter. If you'd like
-                    them to delete user-provided data, please contact them at{" "}
+                    Personal data will be retained only for as long as necessary to provide services 
+                    or as required by law. Users may request deletion of their personal data by 
+                    contacting us at{" "}
                     <button
                         onClick={openEmailClient}
                         className="text-primary underline hover:text-primary-dark"
                     >
-                        support@fifoclock.com
-                    </button>
-                    .
+                        admin@njatrainingsolutions.com
+                    </button>.
                 </p>
 
                 <h2 className="text-2xl font-semibold mt-6 mb-3">Children</h2>
                 <p className="mb-4">
-                    The Application does not address anyone under the age of 13. The Service
-                    Provider does not knowingly collect personally identifiable information
-                    from children under 13 years of age. If you are a parent or guardian and
-                    are aware that your child has provided personal information, please
-                    contact the Service Provider at{" "}
+                    The Website is not directed at children under 13 years of age. The Service Provider 
+                    does not knowingly collect personally identifiable information from children under 13. 
+                    If a parent or guardian believes their child has provided such information, please contact us.
+                </p>
+
+                <h2 className="text-2xl font-semibold mt-6 mb-3">Cookies and Tracking</h2>
+                <p className="mb-4">
+                    The Website may use cookies and similar tracking technologies to enhance user experience. 
+                    Users can choose to disable cookies in their browser settings, but this may affect 
+                    functionality of the Website.
+                </p>
+
+                <h2 className="text-2xl font-semibold mt-6 mb-3">Changes to this Policy</h2>
+                <p className="mb-4">
+                    NJA Training Solutions reserves the right to update this Privacy Policy at any time. 
+                    Any changes will be posted on this page, and continued use of the Website constitutes 
+                    acceptance of the updated policy.
+                </p>
+
+                <h2 className="text-2xl font-semibold mt-6 mb-3">Contact</h2>
+                <p className="mb-4">
+                    If you have any questions regarding this Privacy Policy, please contact the Service Provider at{" "}
                     <button
                         onClick={openEmailClient}
                         className="text-primary underline hover:text-primary-dark"
                     >
-                        support@fifoclock.com
-                    </button>
-                    .
-                </p>
-
-                <h2 className="text-2xl font-semibold mt-6 mb-3">Security</h2>
-                <p className="mb-4">
-                    The Service Provider is concerned about safeguarding the confidentiality
-                    of your information and provides physical, electronic, and procedural
-                    safeguards to protect information processed and maintained.
-                </p>
-
-                <h2 className="text-2xl font-semibold mt-6 mb-3">Changes</h2>
-                <p className="mb-4">
-                    This Privacy Policy may be updated from time to time. The Service
-                    Provider will notify you of changes by updating this page.
-                </p>
-
-                <h2 className="text-2xl font-semibold mt-6 mb-3">Your Consent</h2>
-                <p className="mb-4">
-                    By using the Application, you are consenting to the processing of your
-                    information as set forth in this Privacy Policy now and as amended.
-                </p>
-
-                <h2 className="text-2xl font-semibold mt-6 mb-3">Contact Us</h2>
-                <p className="mb-4">
-                    If you have any questions regarding privacy while using the Application,
-                    please contact the Service Provider at{" "}
-                    <button
-                        onClick={openEmailClient}
-                        className="text-primary underline hover:text-primary-dark"
-                    >
-                        support@fifoclock.com
-                    </button>
-                    .
+                        admin@njatrainingsolutions.com
+                    </button>.
                 </p>
             </div>
-            <Footer/>
+            <Footer />
         </>
     );
 };
