@@ -53,7 +53,7 @@ const CourseOverviewScreen = () => {
                                     // TODO: Replace with Cal.com link
                                     console.log("Enroll now clicked for", course.id);
                                 }}
-                                className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-3 rounded-lg shadow-lg transition"
+                                className="bg-secondary hover:bg-secondary/90 text-white font-semibold px-8 py-3 rounded-lg shadow-lg transition w-full md:w-1/2"
                             >
                                 Enroll Now
                             </button>
