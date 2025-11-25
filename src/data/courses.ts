@@ -9,6 +9,7 @@ import telehandler from "@/assets/images/courses/telehandler.png";
 import waterCart from "@/assets/images/courses/watercart.png";
 import tiptruck from "@/assets/images/courses/tiptruck.png";
 import ArticulatedWaterCart from "@/assets/images/courses/articulated-water-cart.png";
+import ArticulatedDumpTruck from "@/assets/images/courses/articulated-dump-truck.png"
 
 const CourseData = [
     {
@@ -90,6 +91,14 @@ const CourseData = [
         duration: "1 day",
         price: "From $550",
         image: ArticulatedWaterCart
+    },
+    {
+        id: "articulated-dump-truck-training",
+        title: "Articulated Dump Truck Operator Training",
+        summary: "Learn to operate articulated dump trucks confidently and safely. This one-day course covers loading, unloading, maneuvering, and essential on-site best practices for efficient operations.",
+        duration: "1 day",
+        price: "From $550",
+        image: ArticulatedDumpTruck
     }
 
 
