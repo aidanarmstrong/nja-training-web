@@ -7,115 +7,16 @@
 */
 
 import { Footer, Navbar } from "../../Components";
-import HeroVideo from "../../assets/videos/hero-video.mp4";
 import Excavator from "../../assets/images/digger.png";
-import PanVideo from "../../assets/videos/pan-yard.mp4"
+// import PanVideo from "../../assets/videos/pan-yard.mp4"
+import Digger2Video from "../../assets/videos/digger-video-2.mp4";
 import Testimonials from "./Testimonials";
 import { FcCheckmark } from "react-icons/fc";
 import Contact from "./Contact";
 import CoursesSection from "./Courses";
-import courses from './data';
-
-
-
-const Hero = ({ courses }: { courses: { id: string; title: string }[] }) => {
-    return (
-        <section className="relative text-white h-[80%]">
-            {/* Background video */}
-            <video
-                className="absolute inset-0 w-full h-full object-cover"
-                src={HeroVideo} // or "/videos/hero-video.mp4" if in public folder
-                autoPlay
-                loop
-                muted
-                playsInline
-            />
-
-        {/* Dark overlay */}
-            <div className="absolute inset-0 bg-black/40" />
-
-            <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20 md:py-28 flex items-center min-h-screen">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center w-full">
-                    {/* Left content */}
-                    <div>
-                        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mt-20 md:mt-0">
-                            1-on-1 Leica 3D GPS Excavator Training
-                        </h1>
-
-                        <p className="mt-4 text-lg text-slate-200 max-w-xl">
-                            Hands-on, accredited, and practical — master excavators with precision GPS guidance & tilt rotator familiarisation. <b><br/>Get to know the controls</b> 
-                        </p>
-
-
-                        <div className="mt-8 flex flex-wrap gap-4">
-                            <a
-                                href="#courses"
-                                className="inline-block bg-primary text-white px-6 py-3 rounded-md shadow-md hover:bg-primary/90 transition"
-                            >
-                                View Courses
-                            </a>
-                            <a
-                                href="#contact"
-                                className="inline-block border-2 border-white text-white px-6 py-3 rounded-md hover:bg-white/10 transition"
-                            >
-                                Request a Quote
-                            </a>
-                        </div>
-
-                        <div className="mt-8 text-sm text-slate-300">
-                            Small, focused groups • Conveniently located 30 minutes from Perth CBD • Fully accredited Tickets & VOCs
-                        </div>
-
-                    </div>
-
-                    {/* Right side — enquiry card */}
-                    <div className="flex justify-center md:justify-end h-[100%]">
-                        <div className="w-full max-w-sm bg-white rounded p-6 shadow-lg text-slate-800">
-                            <div className="text-sm font-semibold text-primary">Quick enquiry</div>
-                            <h3 className="mt-2 text-lg font-bold">
-                                Book a place or request onsite training
-                            </h3>
-
-                            <form
-                                className="mt-4 space-y-8"
-                                onSubmit={(e) => {
-                                e.preventDefault();
-                                alert("Enquiry submitted — replace with real handler");
-                                }}
-                            >
-                                <input
-                                    aria-label="Name"
-                                    placeholder="Full name"
-                                    className="w-full border border-slate-200 rounded px-3 py-4 text-sm"
-                                />
-                                <input
-                                    aria-label="Email"
-                                    placeholder="Email address"
-                                    className="w-full border border-slate-200 rounded px-3 py-4 text-sm"
-                                />
-                                <select className="w-full border border-slate-200 rounded px-3 py-4 text-sm">
-                                <option>Choose a course</option>
-                                    {courses.map((c) => (
-                                        <option key={c.id} value={c.id}>
-                                            {c.title}
-                                        </option>
-                                    ))}
-                                </select>
-
-                                <button
-                                    type="submit"
-                                    className="w-full bg-primary text-white py-4 rounded"
-                                >
-                                    Send enquiry
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
-};
+import Hero from "./Hero";
+import { FaBookmark, FaCommentDots, FaHeart } from "react-icons/fa6";
+import { IoMdShareAlt } from "react-icons/io";
 
 const Information = () => {
     return (
@@ -149,8 +50,6 @@ const Information = () => {
     );
 };
 
-
-
 const AboutSection = () => {
     return (
         <section id="about" className="py-20 bg-slate-50">
@@ -183,35 +82,77 @@ const AboutSection = () => {
 
                 </div>
 
-                <div>
-                    <div
-                        className="w-full h-96 rounded-lg shadow-md overflow-hidden relative flex justify-center items-center"
-                        aria-hidden="true"
-                    >
-                        {/* Background video */}
+                <div className="flex justify-center py-12">
+                    <div className="relative w-[300px] sm:w-[400px] md:w-[450px] lg:w-[500px] aspect-[9/16] rounded-xl overflow-hidden shadow-2xl border border-gray-200 bg-black">
+                        
+                        {/* Video */}
                         <video
                             autoPlay
                             loop
                             muted
                             playsInline
-                            className="absolute w-full h-full object-cover"
+                            className="absolute inset-0 w-full h-full object-cover"
                         >
-                            <source src={PanVideo} type="video/mp4" />
+                            <source src={Digger2Video} type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
 
-                        {/* Optional overlay */}
-                        <div className="absolute inset-0 bg-black bg-opacity-10"></div>
+                        {/* Overlay gradient for a TikTok feel */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30"></div>
 
+                        {/* Optional bottom label / CTA */}
+                        <div className="absolute bottom-0 left-0 right-0 pb-12 p-2 md:p-4">
+                            {/* Gradient background */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 pointer-events-none"></div>
+
+                            {/* Overlay content */}
+                            <div className="relative flex justify-between items-end text-white">
+                                <div>
+                                    <span className="block font-bold text-sm">NJA Training Solutions</span>
+                                    <span className="block text-xs text-white/80 mt-1">
+                                        Follow our TikTok to stay up-to-date
+                                    </span>
+                                </div>
+                                <a 
+                                    href="https://www.tiktok.com/@njatrainingsolutions"
+                                    target="_blank"
+                                    className="bg-white text-black font-bold px-4 py-1 rounded-full shadow-md hover:bg-white/90 transition cursor-pointer"
+                                >
+                                    Follow
+                                </a>
+                            </div>
+                        </div>
+
+                        {/* Optional side like/comment bar */}
+                        <div className="absolute right-3 bottom-28 md:bottom-36 flex flex-col items-center space-y-4 md:space-y-6 text-white">
+                            <div className="flex flex-col items-center text-center">
+                                <FaHeart className="text-2xl md:text-3xl text-red-500" />
+                                <span className="text-md">2503</span>
+                            </div>
+
+                            <div className="flex flex-col items-center text-center">
+                                <FaCommentDots className="text-2xl md:text-3xl" />
+                                <span className="text-md">135</span>
+                            </div>
+
+                            <div className="flex flex-col items-center text-center">
+                                <FaBookmark className="text-2xl md:text-3xl" />
+                                <span className="text-md">15</span>
+                            </div>
+                             <div className="flex flex-col items-center text-center">
+                                <IoMdShareAlt className="text-3xl md:text-4xl" />
+                                <span className="text-md">10</span>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
+
 
             </div>
         </section>
     );
 };
-
-
 
 const HomeScreen = () => {
 
@@ -219,7 +160,7 @@ const HomeScreen = () => {
         <div className="font-inter antialiased text-slate-900">
             <Navbar />
             <main>
-                <Hero courses={courses} />
+                <Hero />
                 <Information/>
                 <div className="relative w-full h-64 md:h-96 overflow-hidden">
                     {/* Background image */}

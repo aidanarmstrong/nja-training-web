@@ -1,40 +1,44 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Logo } from "../../assets";
 
-
 interface NavbarProps {
-  fixed?: boolean;
-  defaultFilled?: boolean;
+    fixed?: boolean;
+    defaultFilled?: boolean;
+    activeScreen?: "home" | "courses" | "about" | "contact" | "book";
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
-  fixed = true,
-  defaultFilled = false,
+    fixed = true,
+    defaultFilled = false,
+    activeScreen,
 }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [showNav, setShowNav] = useState(true);
     const [scrolled, setScrolled] = useState(defaultFilled);
     const [lastScrollY, setLastScrollY] = useState(0);
 
+    const navigate = useNavigate();
+    const location = useLocation();
+
     useEffect(() => {
         if (!fixed) return;
 
         const handleScroll = () => {
-        const currentScrollY = window.scrollY;
+            const currentScrollY = window.scrollY;
 
-        if (currentScrollY > lastScrollY && currentScrollY > 50) {
-            setShowNav(false);
-        } else {
-            setShowNav(true);
-        }
+            if (currentScrollY > lastScrollY && currentScrollY > 50) {
+                setShowNav(false);
+            } else {
+                setShowNav(true);
+            }
 
-        if (!defaultFilled) {
-            setScrolled(currentScrollY > 10);
-        }
+            if (!defaultFilled) {
+                setScrolled(currentScrollY > 10);
+            }
 
-        setLastScrollY(currentScrollY);
+            setLastScrollY(currentScrollY);
         };
 
         window.addEventListener("scroll", handleScroll, { passive: true });
@@ -42,73 +46,104 @@ export const Navbar: React.FC<NavbarProps> = ({
         return () => window.removeEventListener("scroll", handleScroll);
     }, [lastScrollY, defaultFilled, fixed]);
 
-    // Disable body scroll when mobile menu is open
     useEffect(() => {
         document.body.style.overflow = isOpen ? "hidden" : "";
     }, [isOpen]);
 
-    const handleMobileNavClick = () => setIsOpen(false);
+
+    const linkClass = (screen: NavbarProps["activeScreen"]) => {
+        const base = scrolled
+            ? "text-gray-500 hover:text-primary"
+            : "text-gray-200 hover:text-gray-300";
+
+        const border =
+            activeScreen === screen
+                ? "border-b-2 border-b-primary"
+                : "border-b-2 border-b-transparent";
+
+        return `${base} ${border} py-2`;
+    };
+
+    // --- Helper for scrolling to hash ---
+    const handleScrollOrNavigate = (hash?: string, path?: string) => {
+        if (path && location.pathname !== path) {
+            // Navigate first
+            navigate(path, { replace: false });
+            // Give time for route change, then scroll
+            setTimeout(() => {
+                if (hash) {
+                    const el = document.querySelector(hash);
+                    el?.scrollIntoView({ behavior: "smooth" });
+                } else {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+            }, 100);
+        } else if (hash) {
+            const el = document.querySelector(hash);
+            el?.scrollIntoView({ behavior: "smooth" });
+        } else {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        setIsOpen(false);
+    };
 
     return (
         <>
             {/* Top Navbar Bar */}
             <nav
                 className={`${
-                fixed ? "fixed top-0 left-0" : "relative"
+                    fixed ? "fixed top-0 left-0" : "relative"
                 } w-full z-50 transition-transform duration-300 ${
                     showNav ? "translate-y-0" : "-translate-y-full"
                 } ${
-                scrolled || defaultFilled
-                    ? "bg-white backdrop-blur-md shadow-sm"
-                    : "bg-transparent"
+                    scrolled || defaultFilled
+                        ? "bg-white backdrop-blur-md shadow-sm"
+                        : "bg-transparent"
                 } `}
             >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
                     <div className="flex items-center justify-between h-16">
                         {/* Logo */}
-                        <Link to="/" className="flex items-center gap-3">
+                        <button onClick={() => handleScrollOrNavigate()}>
                             <img
                                 className="h-14 w-auto object-contain"
                                 src={Logo}
                                 alt="NJA Training Solutions Logo"
                             />
-                        </Link>
+                        </button>
 
                         {/* Desktop Menu */}
                         <div className="hidden md:flex md:items-center md:space-x-14">
-                            <a
-                                href="/"
-                                className={`${scrolled ? 'text-gray-500 hover:text-primary ' : 'text-gray-200 hover:text-gray-300 '} border-b-2 border-b-transparent hover:border-b-primary py-2`}
-                            >
+                            <button onClick={() => handleScrollOrNavigate("#", "/")} className={linkClass("home")}>
                                 Home
-                            </a>
+                            </button>
 
-                            <a
-                                href="/#courses"
-                                className={`${scrolled ? 'text-gray-500 hover:text-primary ' : 'text-gray-200 hover:text-gray-300 '} border-b-2 border-b-transparent hover:border-b-primary py-2`}
+                            <button
+                                onClick={() => navigate("/courses/all")}
+                                className={linkClass("courses")}
                             >
-                                Courses
-                            </a>
+                                All Training Courses
+                            </button>
 
-                            <a
-                                href="/#about"
-                                className={`${scrolled ? 'text-gray-500 hover:text-primary ' : 'text-gray-200 hover:text-gray-300 '} border-b-2 border-b-transparent hover:border-b-primary py-2`}
+                            <button
+                                onClick={() => handleScrollOrNavigate("#about", "/")}
+                                className={linkClass("about")}
                             >
                                 About
-                            </a>
+                            </button>
 
-                            <a
-                                href="#contact"
-                                className={`${scrolled ? 'text-gray-500 hover:text-primary ' : 'text-gray-200 hover:text-gray-300 '} border-b-2 border-b-transparent hover:border-b-primary py-2`}
+                            <button
+                                onClick={() => handleScrollOrNavigate("#contact", "/")}
+                                className={linkClass("contact")}
                             >
                                 Contact
-                            </a>
+                            </button>
 
                             <a
-                                href="#book"
+                                href="tel:0497083537"
                                 className="p-2 px-8 bg-primary rounded-full hover:bg-primary/90 transition text-white"
                             >
-                               Call on 0497083537
+                                Enroll Now
                             </a>
                         </div>
 
@@ -179,53 +214,54 @@ export const Navbar: React.FC<NavbarProps> = ({
                                 viewBox="0 0 24 24"
                             >
                                 <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M6 18L18 6M6 6l12 12"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M6 18L18 6M6 6l12 12"
                                 />
                             </svg>
                         </button>
 
                         {/* Mobile links */}
-                        <Link
-                            to="/"
-                            onClick={handleMobileNavClick}
+                        <button
+                            onClick={() => handleScrollOrNavigate()}
                             className="text-4xl font-bold text-white hover:text-gray-300 z-10"
                         >
                             Home
-                        </Link>
+                        </button>
 
-                        <Link
-                            to="/#courses"
-                            onClick={handleMobileNavClick}
+                        <button
+                            onClick={() => navigate("/courses/all")}
                             className="text-4xl font-bold text-white hover:text-gray-300 z-10"
                         >
-                            Courses
-                        </Link>
+                            All Training Courses
+                        </button>
 
-                        <Link
-                            to="/#about"
-                            onClick={handleMobileNavClick}
+                        <button
+                            onClick={() => handleScrollOrNavigate("#about", "/")}
                             className="text-4xl font-bold text-white hover:text-gray-300 z-10"
                         >
                             About
-                        </Link>
+                        </button>
+                        <button
+                            onClick={() => handleScrollOrNavigate("#reviews", "/")}
+                            className="text-4xl font-bold text-white hover:text-gray-300 z-10"
+                        >
+                            Reviews
+                        </button>
 
-                        <Link
-                            to="/#contact"
-                            onClick={handleMobileNavClick}
+                        <button
+                            onClick={() => handleScrollOrNavigate("#contact", "/")}
                             className="text-4xl font-bold text-white hover:text-gray-300 z-10"
                         >
                             Contact
-                        </Link>
+                        </button>
 
                         <a
                             href="tel:0497083537"
-                            onClick={handleMobileNavClick}
                             className="text-4xl font-bold text-primary hover:text-gray-300 z-10"
                         >
-                            Book Now
+                            Enroll Now
                         </a>
                     </motion.div>
                 )}
