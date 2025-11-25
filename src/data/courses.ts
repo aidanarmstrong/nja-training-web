@@ -87,7 +87,7 @@ const CourseData = [
     {
         id: "articulated-water-cart-training",
         title: "Articulated Water Operator Training",
-        summary: "Gain hands-on experience operating articulated water trucks safely and efficiently. This training covers loading, unloading, maneuvering, and best practices for on-site operations.",
+        summary: "Gain hands-on experience operating articulated water carts safely and efficiently. This training covers loading, unloading, maneuvering, and best practices for on-site operations.",
         duration: "1 day",
         price: "From $550",
         image: ArticulatedWaterCart
