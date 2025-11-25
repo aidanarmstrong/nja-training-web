@@ -1,4 +1,4 @@
-import Pipeline from "@/assets/images/partners/pipeline-techinics.png";
+import Pipeline from "@/assets/images/partners/pipeline-technics.png";
 import NationallyRecognised from "@/assets/images/partners/nationally-recognised-training.png";
 import FullTilt from "@/assets/images/partners/FTT_LOGO.png";
 
@@ -7,8 +7,8 @@ export const TrustedBy = () => {
         {
             src: Pipeline,
             alt: "Pipeline Technics",
-            mobileHeight: "h-20", // custom mobile height
-            desktopHeight: "lg:h-24", // custom desktop height
+            mobileHeight: "h-28 sm:h-36", // custom mobile height
+            desktopHeight: "lg:h-[120px]", // custom desktop height
         },
         {
             src: FullTilt,
