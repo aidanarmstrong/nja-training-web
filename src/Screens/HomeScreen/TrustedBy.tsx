@@ -1,9 +1,29 @@
-import AustraliaGov from "@/assets/images/partners/australian-gov.png";
-import WAGov from "@/assets/images/partners/wa-government.png";
+import Pipeline from "@/assets/images/partners/pipeline-techinics.png";
 import NationallyRecognised from "@/assets/images/partners/nationally-recognised-training.png";
 import FullTilt from "@/assets/images/partners/FTT_LOGO.png";
 
 export const TrustedBy = () => {
+    const logos = [
+        {
+            src: Pipeline,
+            alt: "Pipeline Technics",
+            mobileHeight: "h-20", // custom mobile height
+            desktopHeight: "lg:h-24", // custom desktop height
+        },
+        {
+            src: FullTilt,
+            alt: "Full Tilt Training Solutions",
+            mobileHeight: "h-28 sm:h-36",
+            desktopHeight: "lg:h-[120px]",
+        },
+        {
+            src: NationallyRecognised,
+            alt: "Nationally Recognised Training",
+            mobileHeight: "h-16",
+            desktopHeight: "lg:h-20",
+        },
+    ];
+
     return (
         <section id="trustedby" className="w-full bg-gray-800 py-16">
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -19,46 +39,49 @@ export const TrustedBy = () => {
                     </p>
                 </div>
 
-                {/* Logo Grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-10 items-center justify-center">
+                {/* Logos */}
+                {logos.length === 3 ? (
+                // Reversed Pyramid layout for 3 logos
+                    <div className="flex flex-col items-center gap-8">
 
-                    {/* Government of Western Australia Logo */}
-                    <div className="flex justify-center opacity-80 hover:opacity-100 transition">
-                        <img 
-                            src={WAGov}
-                            alt="Government of Western Australia"
-                            className="h-16 sm:h-16 lg:h-16 object-contain invert brightness-0 saturate-0"
-                        />
+                        {/* Top row - two smaller logos */}
+                        <div className="flex gap-10">
+                            {[logos[0], logos[1]].map((logo, index) => (
+                                <div key={index} className="flex justify-center opacity-80 hover:opacity-100 transition">
+                                    <img 
+                                        src={logo.src} 
+                                        alt={logo.alt} 
+                                        className={`object-contain invert brightness-0 saturate-0 ${logo.mobileHeight} ${logo.desktopHeight}`} 
+                                    />
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Bottom row - largest logo */}
+                        <div className="flex justify-center opacity-80 hover:opacity-100 transition">
+                            <img 
+                                src={logos[2].src} 
+                                alt={logos[2].alt} 
+                                className={`object-contain invert brightness-0 saturate-0 ${logos[2].mobileHeight} ${logos[2].desktopHeight}`} 
+                            />
+                        </div>
+
                     </div>
-
-                    {/* Full Tilt */}
-                    <div className="flex justify-center opacity-80 hover:opacity-100 transition">
-                        <img 
-                            src={FullTilt}
-                            alt="Full Tilt Training Solutions"
-                            className="h-24 sm:h-32 lg:h-[100px] object-contain invert brightness-0 saturate-0"
-                        />
+                ) : (
+                    // Default grid for even number of logos
+                    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-10 items-center justify-center">
+                        {logos.map((logo, index) => (
+                            <div key={index} className="flex justify-center opacity-80 hover:opacity-100 transition">
+                                <img 
+                                    src={logo.src} 
+                                    alt={logo.alt} 
+                                    className={`object-contain invert brightness-0 saturate-0 ${logo.mobileHeight} ${logo.desktopHeight}`} 
+                                />
+                            </div>
+                        ))}
                     </div>
+                )}
 
-                    {/* Australian Government – Education / Skills */}
-                    <div className="flex justify-center opacity-80 hover:opacity-100 transition">
-                        <img 
-                            src={AustraliaGov}
-                            alt="Australian Government Training"
-                            className="h-16 sm:h-16 lg:h-16 object-contain invert brightness-0 saturate-0"
-                        />
-                    </div>
-
-                    {/* RTO / Training Compliance Logo */}
-                    <div className="flex justify-center opacity-80 hover:opacity-100 transition">
-                        <img 
-                            src={NationallyRecognised}
-                            alt="Nationally Recognised Training"
-                            className="h-16 sm:h-16 lg:h-16 object-contain invert brightness-0 saturate-0"
-                        />
-                    </div>
-
-                </div>
             </div>
         </section>
     );

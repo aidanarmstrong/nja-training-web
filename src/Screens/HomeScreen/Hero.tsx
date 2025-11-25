@@ -27,7 +27,7 @@ const Hero = () => {
                         </h1>
 
                         <p className="mt-6 text-lg md:text-xl text-slate-200 max-w-xl leading-relaxed">
-                            Hands-on, fully accredited training that lets you master Leica 3D GPS, tilt rotators, safety, and precision excavation—all on real site scenarios.
+                            Real machinery. Real scenarios. Real accreditation. Master Leica 3D GPS, tilt rotators and various attachments for precision excavations with hands on experience built for real world performance 
                         </p>
 
                         <ul className="mt-6 space-y-2 text-slate-300 max-w-md">
