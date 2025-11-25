@@ -8,6 +8,7 @@ import trackMachineWithGPS from "@/assets/images/courses/track-machine-gps.png";
 import telehandler from "@/assets/images/courses/telehandler.png";
 import waterCart from "@/assets/images/courses/watercart.png";
 import tiptruck from "@/assets/images/courses/tiptruck.png";
+import ArticulatedWaterCart from "@/assets/images/courses/articulated-water-cart.png";
 
 const CourseData = [
     {
@@ -81,6 +82,14 @@ const CourseData = [
         duration: "1 day",
         price: "From $550",
         image: tiptruck
+    },
+    {
+        id: "articulated-water-cart-training",
+        title: "Articulated Water Operator Training",
+        summary: "Gain hands-on experience operating articulated water trucks safely and efficiently. This training covers loading, unloading, maneuvering, and best practices for on-site operations.",
+        duration: "1 day",
+        price: "From $550",
+        image: ArticulatedWaterCart
     }
 
 
