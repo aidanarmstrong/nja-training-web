@@ -2,10 +2,31 @@ import { Link, useParams } from "react-router-dom";
 import courses from "@/data/courses"; // your courses JSON
 import { Footer, Navbar } from "@/Components";
 import { HiArrowLeft } from "react-icons/hi";
+import { useEffect } from "react";
+import { getCalApi } from "@calcom/embed-react";
 
 const CourseOverviewScreen = () => {
     const { id } = useParams();
     const course = courses.find((c) => c.id === id);
+
+    useEffect(() => {
+        (async function () {
+            const cal = await getCalApi({
+                namespace: "14t-wheeled-excavator-gps-tilt-rotator-training"
+            });
+
+            cal("ui", {
+                theme: "dark",
+                cssVarsPerTheme: {
+                    light: { "cal-brand": "#79D35E" },
+                    dark: { "cal-brand": "#79D35E" } // added dark theme to fix TS error
+                },
+                hideEventTypeDetails: false,
+                layout: "month_view"
+            });
+        })();
+    }, []);
+
 
     if (!course) return <div className="text-center py-20">Course not found.</div>;
 
@@ -49,11 +70,11 @@ const CourseOverviewScreen = () => {
                             <p className="text-lg text-gray-700">{course.summary}</p>
                             <p className="text-xl font-semibold">Cost: {course.price}</p>
                             <button
-                                onClick={() => {
-                                    // TODO: Replace with Cal.com link
-                                    console.log("Enroll now clicked for", course.id);
-                                }}
-                                className="bg-secondary hover:bg-secondary/90 text-white font-semibold px-8 py-3 rounded-lg shadow-lg transition w-full md:w-1/2"
+                                // data-cal-namespace="14t-wheeled-excavator-gps-tilt-rotator-training"
+                                // data-cal-link="njatrainingsolutions/14t-wheeled-excavator-gps-tilt-rotator-training"
+                                
+                                // data-cal-config='{"layout":"month_view","theme":"light"}'
+                                className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-3 rounded-lg shadow-lg transition w-full md:w-1/2"
                             >
                                 Enroll Now
                             </button>

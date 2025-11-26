@@ -15,7 +15,7 @@ const CoursesSection = () => {
                     <div className="flex items-center justify-center space-x-3 mb-3">
                         <FaTrophy className="text-primary text-3xl" />
                         <h2 className="text-4xl font-extrabold text-slate-900">
-                            Our Most Popular Training
+                            Our Most Popular Courses
                         </h2>
                     </div>
 

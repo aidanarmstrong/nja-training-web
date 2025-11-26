@@ -18,6 +18,8 @@ import Hero from "./Hero";
 import { FaBookmark, FaCommentDots, FaHeart } from "react-icons/fa6";
 import { IoMdShareAlt } from "react-icons/io";
 import { TrustedBy } from "./TrustedBy";
+import TwoPeople from "@/assets/images/labour-hire.png";
+import FAQ from "./faqs";
 
 const Information = () => {
     return (
@@ -44,7 +46,7 @@ const Information = () => {
                 </p>
 
                 <p>
-                    With over <strong>12 years of senior operating experience</strong> and certified trainer & assessors on our team, you’ll learn from trainers who have worked across civil construction, mining, and machinery operations. Our <strong>hands-on, practical, up-to-date training</strong> ensures you leave confident, capable, and job-ready.
+                    With over <strong>12 years of senior operating experience</strong> and certified trainer & assessors on our team, you’ll learn from trainers who have worked across civil construction, mining, and machinery operations. Our <strong>hands-on, practical, up-to-date training</strong> ensures you leave confident, capable, and job ready.
                 </p>
             </div>
         </section>
@@ -185,6 +187,40 @@ const HomeScreen = () => {
 
                 <CoursesSection />
                 <AboutSection />
+                <section className="nja-training-section py-12 px-6">
+                    <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-8">
+
+                        {/* Left side image */}
+                        <div className="flex-1">
+                            <img
+                                src={TwoPeople}
+                                alt="Machine Training"
+                                className="w-full rounded-lg shadow-lg object-cover"
+                            />
+                        </div>
+
+                        {/* Right side text */}
+                        <div className="flex-1 space-y-4">
+                            <h2 className="text-3xl font-bold mb-4 text-secondary">
+                                Level Up With NJA 
+                            </h2>
+
+                            <p>
+                                Already got your tickets? Awesome! But why stop there? Staying ahead in the machine-tech world means learning the latest GPS systems, attachments, and control tricks. At NJA Training Solutions, we make upskilling fun and practical—so you stay sharp and confident on every job.
+                            </p>
+
+                            <p>
+                                Employers love operators who can do more than the basics. The more skills you pick up, the more valuable you become, and the more doors you open for exciting opportunities. Think of it as leveling up your career—without the boring grind.
+                            </p>
+
+                            <p>
+                                Whether it’s mastering new attachments or refining your GPS skills, our training keeps you ahead of the game. Be capable, be confident.
+                            </p>
+                        </div>
+
+                    </div>
+                </section>
+                <FAQ />
                 <Information/>
                 <Testimonials />
                 <Contact />
