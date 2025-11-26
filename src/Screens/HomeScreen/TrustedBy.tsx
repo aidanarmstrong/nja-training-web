@@ -1,6 +1,7 @@
 import Pipeline from "@/assets/images/partners/pipeline-technics.png";
 import NationallyRecognised from "@/assets/images/partners/nationally-recognised-training.png";
 import FullTilt from "@/assets/images/partners/FTT_LOGO.png";
+import SMGCivil from "@/assets/images/partners/smg-civil.png";
 
 export const TrustedBy = () => {
     const logos = [
@@ -9,18 +10,27 @@ export const TrustedBy = () => {
             alt: "Pipeline Technics",
             mobileHeight: "h-28 sm:h-36", // custom mobile height
             desktopHeight: "lg:h-[120px]", // custom desktop height
+            website_url: "https://www.pipelinetechnics.com.au"
+        },
+        {
+            src: SMGCivil,
+            alt: "SMG Civil",
+            mobileHeight: "h-28 sm:h-36", // custom mobile height
+            desktopHeight: "lg:h-[120px]", // custom desktop height
         },
         {
             src: FullTilt,
             alt: "Full Tilt Training Solutions",
             mobileHeight: "h-28 sm:h-36",
             desktopHeight: "lg:h-[120px]",
+            website_url: "https://fulltilttraining.com.au/"
         },
         {
             src: NationallyRecognised,
             alt: "Nationally Recognised Training",
             mobileHeight: "h-16",
             desktopHeight: "lg:h-20",
+            website_url: "https://training.gov.au/"
         },
     ];
 
@@ -71,13 +81,18 @@ export const TrustedBy = () => {
                     // Default grid for even number of logos
                     <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-10 items-center justify-center">
                         {logos.map((logo, index) => (
-                            <div key={index} className="flex justify-center opacity-80 hover:opacity-100 transition">
+                            <a 
+                                key={index} 
+                                className="flex justify-center opacity-80 hover:opacity-100 transition"
+                                href={logo.website_url}
+                                target="_blank"
+                            >
                                 <img 
                                     src={logo.src} 
                                     alt={logo.alt} 
                                     className={`object-contain invert brightness-0 saturate-0 ${logo.mobileHeight} ${logo.desktopHeight}`} 
                                 />
-                            </div>
+                            </a>
                         ))}
                     </div>
                 )}

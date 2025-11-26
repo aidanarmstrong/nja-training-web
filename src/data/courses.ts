@@ -18,6 +18,8 @@ const CourseData = [
         summary: "Operator training on wheeled excavators including movement, setup and safe operation.",
         duration: "1 day",
         price: "From $950",
+        code: "RIIMPO320F",
+        codeName: "Conduct Civil Construction Excavator Operations",
         image: gps3
     },
     {
@@ -26,82 +28,100 @@ const CourseData = [
         summary: "Hands-on training for operating a 14-ton tracked excavator with GPS guidance.",
         duration: "1 day",
         price: "From $750",
+        code: "RIIMPO320F",
+        codeName: "Conduct Civil Construction Excavator Operations",
         image: trackMachineWithGPS
     },
     {
         id: "trench-box-support-install-training",
         title: "Trench Support & Trench Box Install",
         summary: "Learn how to install trench supports and build and place trench boxes safely and correctly.",
-        duration: "1 day",
+        duration: "2-4 Hours",
         price: "From $450",
+        code: "RIICCM210E",
+        codeName: "Install Trench Support",
         image: course3
     },
     {
         id: "skid-steer-loader-grader-attachment-gps-training",
         title: "Skid Steer Loader Training (Grader Attachment) (GPS)",
         summary: "Enhance your Skid Steer skills with GPS-guided grader attachment training. Perfect as an optional add-on to any machine course.",
-        duration: "Add-on",
+        duration: "4-6 Hours",
         price: "From $750",
+        code: "RIIMPO318F",
+        codeName: "Conduct Civil Construction Skid Steer Loader Operations",
         image: course4
     },
     {
         id: "loader-operator-training",
         title: "Loader Operator Training",
         summary: "Straightforward loader operator course covering controls, site work and material handling.",
-        duration: "1 day",
+        duration: "4-6 Hours",
         price: "From $550",
+        code: "RIIMPO321F",
+        codeName: "Conduct Civil Construction Wheeled Front End Loader Operations",
         image: loader1
     },
     {
         id: "itc-operator-training",
         title: "ITC Operator Training (Integrated Tool Carrier)",
         summary: "Practical ICT operator training covering machine setup, attachments, safety and site operation.",
-        duration: "1 day",
+        duration: "4-6 Hours",
         price: "From $550",
+        code: "RIIHAN311F",
+        codeName: "Conduct Operations With Integrated Tool Carrier",
         image: course1
     },
     {
         id: "telehandler-operator-training",
         title: "Telehandler Operator Training",
         summary: "Hands-on telehandler training covering setup, attachments, safe operation, and site procedures.",
-        duration: "1 day",
+        duration: "4-6 Hours",
         price: "From $550",
+        code: "RIIHAN309F",
+        codeName: "Conduct Telescopic Materials Handler Operations",
         image: telehandler
     },
     {
         id: "water-cart-operator-training",
         title: "Water Cart Operator Training",
         summary: "Hands-on training in operating water carts safely and efficiently, including site procedures, loading, and dust suppression techniques.",
-        duration: "1 day",
+        duration: "4-6 Hours",
         price: "From $550",
+        code: "RIIMPO326E",
+        codeName: "Conduct Water Truck Operations",
         image: waterCart
     },
     {
         id: "tip-truck-operator-training",
         title: "Tip Truck Operator Training",
         summary: "Learn to operate tip trucks confidently and safely, covering loading, unloading, maneuvering, and on-site best practices.",
-        duration: "1 day",
+        duration: "4-6 Hours",
         price: "From $550",
+        code: "RIIVEH304E",
+        codeName: "Conduct Tip Truck Operations",
         image: tiptruck
     },
     {
         id: "articulated-water-cart-training",
         title: "Articulated Water Operator Training",
         summary: "Gain hands-on experience operating articulated water carts safely and efficiently. This training covers loading, unloading, maneuvering, and best practices for on-site operations.",
-        duration: "1 day",
+        duration: "4-6 Hours",
         price: "From $550",
+        code: "RIIMPO326E",
+        codeName: "Conduct Water Truck Operations",
         image: ArticulatedWaterCart
     },
     {
         id: "articulated-dump-truck-training",
         title: "Articulated Dump Truck Operator Training",
         summary: "Learn to operate articulated dump trucks confidently and safely. This one-day course covers loading, unloading, maneuvering, and essential on-site best practices for efficient operations.",
-        duration: "1 day",
+        duration: "4-6 Hours",
         price: "From $550",
+        code: "RIIMPO337E",
+        codeName: "Conduct Articulated Haul Truck Operations",
         image: ArticulatedDumpTruck
     }
-
-
 ];
 
 export default CourseData;

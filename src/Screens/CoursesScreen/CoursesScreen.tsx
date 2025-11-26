@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import digger from "@/assets/images/digger.png";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { Chip, Tooltip } from "@mui/material";
 
 const CoursesScreen = () => {
     const courses = coursesData; // keep IDs
@@ -130,6 +131,11 @@ const CoursesScreen = () => {
                                     <h3 className="text-xl font-bold text-slate-900 mb-3">
                                         {course.title}
                                     </h3>
+                                    <div className="flex flex-row flex-wrap gap-2">
+                                        <Tooltip title={course.codeName}>
+                                            <Chip label={course.code ?? ''} />
+                                        </Tooltip>
+                                    </div>
                                     <p className="text-slate-600 text-base mb-5">
                                         {course.summary}
                                     </p>

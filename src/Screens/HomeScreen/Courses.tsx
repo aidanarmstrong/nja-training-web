@@ -1,4 +1,5 @@
 import courses from "@/data/courses";
+import { Chip, Tooltip } from "@mui/material";
 import { FaTrophy } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -43,6 +44,13 @@ const CoursesSection = () => {
                                 <h3 className="text-xl font-bold text-slate-900 mb-3">
                                     {course.title}
                                 </h3>
+                                
+                                <div className="flex flex-row flex-wrap gap-2">
+                                    <Tooltip title={course.codeName}>
+                                        <Chip label={course.code ?? ''} />
+                                    </Tooltip>
+                                </div>
+                   
 
                                 <p className="text-slate-600 text-base mb-5">
                                     {course.summary}
