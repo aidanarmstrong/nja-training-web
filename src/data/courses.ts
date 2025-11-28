@@ -133,50 +133,6 @@ const CourseData = [
         `
     },
     {
-        id: "trench-box-support-install-training",
-        title: "Trench Support & Trench Box Install",
-        summary: "Learn how to install trench supports and build and place trench boxes safely and correctly.",
-        duration: "2-4 Hours",
-        price: " $550",
-        code: ["RIICCM210E"],
-        codeName: ["Install Trench Support"],
-        image: [course3],
-        course_overview: `
-            <div>
-                <h2 class="text-2xl font-bold mb-4">Course Overview</h2>
-                <p class="text-gray-700 leading-relaxed">
-                    Working in trenches is one of the most hazardous tasks in the civil construction industry. 
-                    The primary function of any trench support method is to protect people from caving ground. 
-                    The secondary function is to provide support to nearby structures and allow equipment access to the work.
-                </p>
-                <p class="text-gray-700 leading-relaxed mt-4">
-                    In this course, you will learn about the effect of different soils and ground types, trench construction, 
-                    control of excavations (benching, battering, shoring), and safe removal of trench support.
-                </p>
-
-                <h2 class="text-2xl font-bold mt-6 mb-4">Course Outcomes</h2>
-                <p class="text-gray-700 leading-relaxed">
-                    On completion of this course, you will be able to:
-                </p>
-                <ul class="list-disc pl-5 mt-4 text-gray-700 space-y-2">
-                    <li>Plan and prepare for installing trench support</li>
-                    <li>Install trench shoring</li>
-                    <li>Remove trench shoring</li>
-                    <li>Conduct housekeeping activities</li>
-                </ul>
-                <p class="mt-4 text-gray-700">
-                    Upon successful completion, you will receive a Statement of Attainment.
-                </p>
-
-                <p class="mt-4 text-gray-700 italic font-bold">
-                    Note: Assessments are conducted in English. If English is your second language, you may engage a professional accredited translator for training purposes only. 
-                    All assessments must be completed in English without translator assistance.
-                </p>
-            </div>
-        `
-
-    },
-    {
         id: "skid-steer-loader-grader-attachment-gps-training",
         title: "Skid Steer Loader Training (Grader Attachment) (GPS)",
         summary: "Enhance your Skid Steer skills with GPS-guided grader attachment training. Perfect as an optional add-on to any machine course.",
@@ -218,6 +174,50 @@ const CourseData = [
                     Note: This unit alone does not equip participants to load or unload equipment independently. 
                     Operators must either have completed, or work alongside someone who has completed 
                     <strong>RIIHAN308F – Load and Unload Plant</strong> (or an equivalent qualification) to safely perform these tasks.
+                </p>
+            </div>
+        `
+
+    },
+    {
+        id: "trench-box-support-install-training",
+        title: "Trench Support & Trench Box Install",
+        summary: "Learn how to install trench supports and build and place trench boxes safely and correctly.",
+        duration: "2-4 Hours",
+        price: " $550",
+        code: ["RIICCM210E"],
+        codeName: ["Install Trench Support"],
+        image: [course3],
+        course_overview: `
+            <div>
+                <h2 class="text-2xl font-bold mb-4">Course Overview</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Working in trenches is one of the most hazardous tasks in the civil construction industry. 
+                    The primary function of any trench support method is to protect people from caving ground. 
+                    The secondary function is to provide support to nearby structures and allow equipment access to the work.
+                </p>
+                <p class="text-gray-700 leading-relaxed mt-4">
+                    In this course, you will learn about the effect of different soils and ground types, trench construction, 
+                    control of excavations (benching, battering, shoring), and safe removal of trench support.
+                </p>
+
+                <h2 class="text-2xl font-bold mt-6 mb-4">Course Outcomes</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    On completion of this course, you will be able to:
+                </p>
+                <ul class="list-disc pl-5 mt-4 text-gray-700 space-y-2">
+                    <li>Plan and prepare for installing trench support</li>
+                    <li>Install trench shoring</li>
+                    <li>Remove trench shoring</li>
+                    <li>Conduct housekeeping activities</li>
+                </ul>
+                <p class="mt-4 text-gray-700">
+                    Upon successful completion, you will receive a Statement of Attainment.
+                </p>
+
+                <p class="mt-4 text-gray-700 italic font-bold">
+                    Note: Assessments are conducted in English. If English is your second language, you may engage a professional accredited translator for training purposes only. 
+                    All assessments must be completed in English without translator assistance.
                 </p>
             </div>
         `
@@ -430,7 +430,7 @@ const CourseData = [
     {
         id: "articulated-water-cart-and-dump-truck-training",
         title: "Articulated Water Cart & Dump Truck Operator Training",
-        summary: "Get hands-on experience operating articulated water carts and dump trucks safely and efficiently. This one-day course covers loading, unloading, maneuvering, and essential on-site best practices.",
+        summary: "Get hands-on experience operating hydrema articulated water carts and thwaites dump trucks safely and efficiently. This one-day course covers loading, unloading, maneuvering, and essential on-site best practices.",
         duration: "4-6 Hours",
         price: "$950",
         code: ["RIIMPO326E", "RIIVEH304E"],
