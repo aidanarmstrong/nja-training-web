@@ -97,11 +97,46 @@ const CourseData = [
         `
     },
     {
+        id: "experience-only-course",
+        title: "Experience Only – For Ticket Holders",
+        summary: "This course is for participants who already hold the necessary tickets and just need practical on-site experience. Gain hands-on practice safely and efficiently.",
+        duration: "4-6 Hours",
+        price: "$650",
+        code: [], 
+        codeName: [],
+        image: [ExperiencedCourseImage],
+        course_overview: `
+            <div>
+                <h2 class="text-2xl font-bold mb-4">Course Overview</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    This course is specifically designed for participants who already hold the necessary tickets and qualifications, and are looking to gain additional practical experience on-site. It provides a safe, structured environment to practice and refine your skills under the guidance of experienced instructors.
+                </p>
+
+                <h2 class="text-2xl font-bold mt-6 mb-4">What You Will Do</h2>
+                <ul class="list-disc pl-5 mt-4 text-gray-700 space-y-2">
+                    <li>Hands-on practice operating machinery safely and efficiently</li>
+                    <li>Loading, unloading, and maneuvering exercises on dedicated equipment</li>
+                    <li>Apply on-site best practices for daily operational tasks</li>
+                    <li>Opportunity to ask questions and clarify procedures with instructors</li>
+                    <li>Build confidence and competence in real-world scenarios</li>
+                </ul>
+
+                <p class="mt-4 text-gray-700">
+                    This course is perfect for individuals seeking to reinforce their existing skills and gain practical experience in a dedicated training environment.
+                </p>
+
+                <p class="mt-4 text-gray-700 italic font-bold">
+                    Note: This is a skills training session only. No formal qualification or Statement of Attainment will be issued. The course is intended solely for participants to gain confident, practical experience.
+                </p>
+            </div>
+        `
+    },
+    {
         id: "trench-box-support-install-training",
         title: "Trench Support & Trench Box Install",
         summary: "Learn how to install trench supports and build and place trench boxes safely and correctly.",
         duration: "2-4 Hours",
-        price: " $450",
+        price: " $550",
         code: ["RIICCM210E"],
         codeName: ["Install Trench Support"],
         image: [course3],
@@ -428,42 +463,6 @@ const CourseData = [
 
                 <p class="mt-2 text-gray-700 italic font-bold">
                     Note: Completion of this course alone does not provide sufficient skill to load or unload equipment independently. Operators must either have completed, or work alongside someone who has completed <strong>RIIHAN308F – Load and Unload Plant</strong> or an equivalent qualification to safely perform these tasks.
-                </p>
-            </div>
-        `
-
-    },
-    {
-        id: "experience-only-course",
-        title: "Experience Only – For Ticket Holders",
-        summary: "This course is for participants who already hold the necessary tickets and just need practical on-site experience. Gain hands-on practice safely and efficiently.",
-        duration: "4-6 Hours",
-        price: "$650",
-        code: [], 
-        codeName: [],
-        image: [ExperiencedCourseImage],
-        course_overview: `
-            <div>
-                <h2 class="text-2xl font-bold mb-4">Course Overview</h2>
-                <p class="text-gray-700 leading-relaxed">
-                    This course is specifically designed for participants who already hold the necessary tickets and qualifications, and are looking to gain additional practical experience on-site. It provides a safe, structured environment to practice and refine your skills under the guidance of experienced instructors.
-                </p>
-
-                <h2 class="text-2xl font-bold mt-6 mb-4">What You Will Do</h2>
-                <ul class="list-disc pl-5 mt-4 text-gray-700 space-y-2">
-                    <li>Hands-on practice operating machinery safely and efficiently</li>
-                    <li>Loading, unloading, and maneuvering exercises on dedicated equipment</li>
-                    <li>Apply on-site best practices for daily operational tasks</li>
-                    <li>Opportunity to ask questions and clarify procedures with instructors</li>
-                    <li>Build confidence and competence in real-world scenarios</li>
-                </ul>
-
-                <p class="mt-4 text-gray-700">
-                    This course is perfect for individuals seeking to reinforce their existing skills and gain practical experience in a dedicated training environment.
-                </p>
-
-                <p class="mt-4 text-gray-700 italic font-bold">
-                    Note: This is a skills training session only. No formal qualification or Statement of Attainment will be issued. The course is intended solely for participants to gain confident, practical experience.
                 </p>
             </div>
         `
