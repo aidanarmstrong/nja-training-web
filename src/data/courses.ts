@@ -33,13 +33,13 @@ const CourseData = [
                 </p>
 
                 <ul class="list-disc pl-5 mt-4 text-gray-700 space-y-2">
-                    <li>Operate the tracked excavator in accordance with site procedures and safety standards</li>
+                    <li>Operate the wheeled excavator in accordance with site procedures and safety standards</li>
                     <li>Excavate around simulated underground services</li>
                     <li>Practical trench box installation training, focused on real world safety, precision WHS complacence</li>
                     <li>Leica 3D GPS familiarization, learn how to use the system</li>
                     <li>Steel wrist tilt-rotator, master precision controls and multi-angle excavation</li>
                     <li>Lift, transport, and position materials effectively</li>
-                    <li>Fit and remove standard attachments for the tracked excavator</li>
+                    <li>Fit and remove standard attachments</li>
                     <li>Prepare the machine for relocation between tasks</li>
                     <li>Maintain a safe and clean work area, including proper disposal and recycling of materials</li>
                 </ul>
@@ -80,7 +80,7 @@ const CourseData = [
                     <li>Practical trench box installation training, focused on real world safety, precision WHS complacence</li>
                     <li>Leica 3D GPS familiarization, learn how to use the system</li>
                     <li>Lift, transport, and position materials effectively</li>
-                    <li>Fit and remove standard attachments for the tracked excavator</li>
+                    <li>Fit and remove standard attachments</li>
                     <li>Prepare the machine for relocation between tasks</li>
                     <li>Maintain a safe and clean work area, including proper disposal and recycling of materials</li>
                 </ul>
@@ -97,8 +97,8 @@ const CourseData = [
         `
     },
     {
-        id: "experience-only-course",
-        title: "Experience Only – For Ticket Holders",
+        id: "gps-only-course",
+        title: "GPS Only – For Ticket Holders",
         summary: "This course is for participants who already hold the necessary tickets and just need practical on-site experience. Gain hands-on practice safely and efficiently.",
         duration: "4-6 Hours",
         price: "$650",
@@ -114,6 +114,7 @@ const CourseData = [
 
                 <h2 class="text-2xl font-bold mt-6 mb-4">What You Will Do</h2>
                 <ul class="list-disc pl-5 mt-4 text-gray-700 space-y-2">
+                    <li>Learn how to confidently operate Leica 3D GPS, understand the MC1 interface, dig to design using accurate RLs, offsets and live model guidance</li>
                     <li>Hands-on practice operating machinery safely and efficiently</li>
                     <li>Loading, unloading, and maneuvering exercises on dedicated equipment</li>
                     <li>Apply on-site best practices for daily operational tasks</li>
@@ -200,6 +201,8 @@ const CourseData = [
                 </p>
                 <ul class="list-disc pl-5 mt-4 text-gray-700 space-y-2">
                     <li>Prepare and plan for skid steer loader operations in a worksite environment</li>
+                    <li>Learn how to confidently operate Leica 3D GPS, understand the MC1 interface, offsets and live model guidance</li>
+                    <li>Learn to deliver millimeter-perfect final-trim using the GPS grader blade attachment</li>
                     <li>Operate the skid steer loader according to established safety and operational standards</li>
                     <li>Load, move, and position materials as required</li>
                     <li>Fit, remove, and handle attachments correctly</li>
@@ -349,9 +352,14 @@ const CourseData = [
         image: [waterCart],
         course_overview: `
             <div>
-                <h2 class="text-2xl font-bold mb-4">Candidate Requirements</h2>
+                <h2 class="text-2xl font-bold mb-4">Course Overview</h2>
                 <p class="text-gray-700 leading-relaxed">
                     This course is designed for experienced operators and delivered in the workplace. It focuses on developing practical skills for safely operating a <strong>water vehicle</strong>, including loading, transporting, and distributing water efficiently. Water vehicles are commonly used across civil construction and resource sector projects.
+                </p>
+
+                <h2 class="text-2xl font-bold mt-6 mb-4">Candidate Requirements</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    All candidates must have a fully valid WA HR driving license.
                 </p>
 
                 <h2 class="text-2xl font-bold mt-6 mb-4">Learning Outcomes</h2>
