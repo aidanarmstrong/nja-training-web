@@ -33,11 +33,15 @@ const CourseData = [
                 </p>
 
                 <ul class="list-disc pl-5 mt-4 text-gray-700 space-y-2">
-                    <li>Operate the excavator according to site procedures and safety standards</li>
-                    <li>Lift, carry, and place materials effectively</li>
-                    <li>Fit, remove, and utilize attachments including tilt rotators</li>
+                    <li>Operate the tracked excavator in accordance with site procedures and safety standards</li>
+                    <li>Excavate around simulated underground services</li>
+                    <li>Practical trench box installation training, focused on real world safety, precision WHS complacence</li>
+                    <li>Leica 3D GPS familiarization, learn how to use the system</li>
+                    <li>Steel wrist tilt-rotator, master precision controls and multi-angle excavation</li>
+                    <li>Lift, transport, and position materials effectively</li>
+                    <li>Fit and remove standard attachments for the tracked excavator</li>
                     <li>Prepare the machine for relocation between tasks</li>
-                    <li>Maintain a clean and safe work area, including proper disposal and recycling of materials</li>
+                    <li>Maintain a safe and clean work area, including proper disposal and recycling of materials</li>
                 </ul>
 
                 <p class="mt-4 text-gray-700">
@@ -72,6 +76,9 @@ const CourseData = [
 
                 <ul class="list-disc pl-5 mt-4 text-gray-700 space-y-2">
                     <li>Operate the tracked excavator in accordance with site procedures and safety standards</li>
+                    <li>Excavate around simulated underground services</li>
+                    <li>Practical trench box installation training, focused on real world safety, precision WHS complacence</li>
+                    <li>Leica 3D GPS familiarization, learn how to use the system</li>
                     <li>Lift, transport, and position materials effectively</li>
                     <li>Fit and remove standard attachments for the tracked excavator</li>
                     <li>Prepare the machine for relocation between tasks</li>
