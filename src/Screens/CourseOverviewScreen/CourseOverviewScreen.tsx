@@ -11,21 +11,10 @@ const CourseOverviewScreen = () => {
 
     useEffect(() => {
         (async function () {
-            const cal = await getCalApi({
-                namespace: "14t-wheeled-excavator-gps-tilt-rotator-training"
-            });
-
-            cal("ui", {
-                theme: "dark",
-                cssVarsPerTheme: {
-                    light: { "cal-brand": "#79D35E" },
-                    dark: { "cal-brand": "#79D35E" } // added dark theme to fix TS error
-                },
-                hideEventTypeDetails: false,
-                layout: "month_view"
-            });
+        const cal = await getCalApi({"namespace":"14t-wheeled-excavator-gps-tilt-rotator-training"});
+        cal("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#79D35E"},"dark":{"cal-brand":"#fff"}},"hideEventTypeDetails":true,"layout":"month_view"});
         })();
-    }, []);
+    }, [])
 
 
     if (!course) return <div className="text-center py-20">Course not found.</div>;
@@ -58,7 +47,7 @@ const CourseOverviewScreen = () => {
                         {/* Image container with fixed aspect ratio */}
                         <div className="w-full lg:w-2/6 aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
                             <img
-                                src={course.image}
+                                src={course.image[0]}
                                 alt={course?.title}
                                 className="w-full h-full object-cover"
                             />
@@ -70,10 +59,9 @@ const CourseOverviewScreen = () => {
                             <p className="text-lg text-gray-700">{course.summary}</p>
                             <p className="text-xl font-semibold">Cost: {course.price}</p>
                             <button
-                                // data-cal-namespace="14t-wheeled-excavator-gps-tilt-rotator-training"
-                                // data-cal-link="njatrainingsolutions/14t-wheeled-excavator-gps-tilt-rotator-training"
-                                
-                                // data-cal-config='{"layout":"month_view","theme":"light"}'
+                                data-cal-namespace="14t-wheeled-excavator-gps-tilt-rotator-training"
+                                data-cal-link="njatrainingsolutions/14t-wheeled-excavator-gps-tilt-rotator-training"
+                                data-cal-config='{"layout":"month_view"}'
                                 className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-3 rounded-lg shadow-lg transition w-full md:w-1/2"
                             >
                                 Enroll Now
@@ -88,48 +76,39 @@ const CourseOverviewScreen = () => {
             {/* Course Details */}
             <section className="max-w-5xl mx-auto px-6 lg:px-12 py-16 space-y-12">
                 {/* Description */}
-                <div>
-                    <h2 className="text-2xl font-bold mb-4">Candidate Requirements</h2>
-                    <p className="text-gray-700 leading-relaxed">
-                        This course has been developed for experienced operators and to be delivered in the
-                        workplace. It applies operator skills and knowledge for those working in site-based
-                        roles required to operate an excavator to lift, carry and place materials. Excavators are
-                        used across a range of industries including civil construction and the resource sectors.
-                    </p>
-                    <ul className="list-disc pl-5 mt-4 text-gray-700 space-y-2">
-                        <li>Operating the excavator in line with established requirements</li>
-                        <li>Lifting, carrying and placing materials to complete work activity</li>
-                        <li>Selecting, removing, fitting and using attachments or an excavator</li>
-                        <li>Preparing to relocate the excavator</li>
-                        <li>Conducting housekeeping activities, including recycling and disposing of materials</li>
-                    </ul>
-                    <p className="mt-4 text-gray-700">
-                        A Statement of Attainment will be issued on successful completion of the unit requirements.
-                    </p>
-                    <p className="mt-2 text-gray-700 italic">
-                        Note: This unit alone does not provide sufficient skill to independently load and unload
-                        equipment. To perform this activity safely, personnel must either complete or be assisting
-                        someone who has completed the relevant unit.
-                    </p>
-                </div>
+                <div dangerouslySetInnerHTML={{ __html: course.course_overview }} />
 
                 {/* Additional Requirements */}
-                <div>
+               <div>
                     <h2 className="text-2xl font-bold mb-4">Pre-requisites & Requirements</h2>
-                    <ul className="list-disc pl-5 space-y-2 text-gray-700">
-                        <li>Must be 18 years of age or older</li>
-                        <li>Prior practical operator experience recommended</li>
-                        <li>Unique Student Identifier (USI)</li>
-                        <li>Photo ID (Drivers Licence, WA Photo Card)</li>
-                        <li>PPE: Steel cap boots, long sleeve shirt, long pants, hat</li>
-                        <li>Delivery: On-site training at NJA or client premises</li>
-                        <li>Language Literacy and Numeracy (LLN) test on enrolment</li>
+                    <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                        <li><strong>Age Requirement:</strong> Participants must be 18 years or older.</li>
+                        <li><strong>Experience:</strong> Prior practical operator experience is recommended.</li>
+                        <li>
+                            <strong>Unique Student Identifier (USI):</strong> Required for enrolment and issuance of a Statement of Attainment. 
+                            Apply for your free USI at <a className="text-blue-500 underline" href="https://www.usi.gov.au/" target="_blank" rel="noopener noreferrer">usi.gov.au</a>.
+                        </li>
+                        <li><strong>Photo Identification:</strong> Valid driver’s licence or WA Photo Card.</li>
+                        <li><strong>Personal Protective Equipment (PPE):</strong> Steel-capped boots, long sleeve shirt, long pants, and hat.</li>
+                        <li><strong>Delivery:</strong> On-site training at the NJA Training Facility.</li>
                     </ul>
                 </div>
 
+                <div className="mx-auto bg-blue-50 border-l-4 border-primary p-6 rounded-lg shadow-sm mt-8">
+                    <h2 className="text-2xl font-bold mb-4 text-primary">Looking to Book Multiple Days?</h2>
+                    <p className="text-gray-700 leading-relaxed mb-4">
+                        If you’re planning to book training over a few days or need a tailored schedule, we can help! Fill out the enquiry form below and our team will work with you to reserve a suitable time slot that fits your needs.
+                    </p>
+                    <p className="text-gray-700 font-semibold">
+                        We’ll contact you promptly to confirm availability and arrange your training sessions.
+                    </p>
+                </div>
+
+
+                
                 {/* Contact / Enquiry */}
-                <div>
-                    <h2 className="text-2xl font-bold mb-4">Enquire or Enroll</h2>
+                <div className="max-w-2-xl bg-white shadow-lg border border-gray-50 rounded-lg p-6">
+                    <h2 className="text-2xl font-bold mb-4">Enquire</h2>
                     <form
                         className="grid grid-cols-1 md:grid-cols-2 gap-6"
                         onSubmit={(e) => {
@@ -173,6 +152,7 @@ const CourseOverviewScreen = () => {
                         </button>
                     </form>
                 </div>
+
             </section>
 
             {/* Footer */}

@@ -178,7 +178,7 @@ const HomeScreen = () => {
 
                     {/* CTA content */}
                     <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
-                        <h2 className="text-2xl md:text-4xl font-bold mt-24">
+                        <h2 className="text-2xl md:text-4xl font-bold ml-[100px] mt-[22px] md:ml-[330px] md:mt-[80px]">
                             Ready to get started?
                         </h2>
                     </div>

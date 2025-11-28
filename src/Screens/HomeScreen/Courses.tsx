@@ -1,6 +1,6 @@
 import courses from "@/data/courses";
 import { Chip, Tooltip } from "@mui/material";
-import { FaTrophy } from "react-icons/fa";
+import { FaCrown } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const CoursesSection = () => {
@@ -13,7 +13,6 @@ const CoursesSection = () => {
                 {/* HEADER */}
                 <div className="text-center mb-14">
                     <div className="flex items-center justify-center space-x-3 mb-3">
-                        <FaTrophy className="text-primary text-3xl" />
                         <h2 className="text-4xl font-extrabold text-slate-900">
                             Our Most Popular Courses
                         </h2>
@@ -28,16 +27,27 @@ const CoursesSection = () => {
 
                 {/* POPULAR COURSES */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {popularCourses.map((course) => (
+                    {popularCourses.map((course, index) => (
                         <article
                             key={course.id}
                             className="border rounded-2xl hover:shadow transition bg-white flex flex-col justify-between overflow-hidden"
                         >
-                            <img
-                                src={course.image}
-                                alt={course.title}
-                                className="h-48 w-full object-cover"
-                            />
+                            <div className="relative">
+                                <img
+                                    src={course.image[0]}
+                                    alt={course.title}
+                                    className="h-48 w-full object-cover rounded-lg"
+                                />
+                                
+                                {index === 0 && (
+                                    <span className="absolute top-2 left-2 bg-white text-black text-xs font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-2">
+                                        <FaCrown className="text-yellow-500 text-lg" />
+                                        Our Most Popular
+                                    </span>
+                                )}
+
+                            </div>
+
 
                             <div className="px-6 pb-6 pt-4">
                                 
@@ -46,9 +56,11 @@ const CoursesSection = () => {
                                 </h3>
                                 
                                 <div className="flex flex-row flex-wrap gap-2">
-                                    <Tooltip title={course.codeName}>
-                                        <Chip label={course.code ?? ''} />
-                                    </Tooltip>
+                                    {course.code?.map((codeItem: string, index: number) => (
+                                        <Tooltip key={index} title={`${codeItem} - ${course.codeName[index]}`}>
+                                            <Chip label={codeItem} />
+                                        </Tooltip>
+                                    ))}
                                 </div>
                    
 
@@ -65,7 +77,7 @@ const CoursesSection = () => {
                                     to={`/courses/${course.id}/overview`}
                                     className="w-full block bg-primary text-white px-4 py-3 rounded-lg font-medium hover:bg-primary/90 transition text-center"
                                 >
-                                    Course Overview
+                                    View Course
                                 </Link>
                             </div>
                         </article>
