@@ -2,19 +2,59 @@ import { Link, useParams } from "react-router-dom";
 import courses from "@/data/courses"; // your courses JSON
 import { Footer, Navbar } from "@/Components";
 import { HiArrowLeft } from "react-icons/hi";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getCalApi } from "@calcom/embed-react";
+import emailjs from "@emailjs/browser";
 
 const CourseOverviewScreen = () => {
     const { id } = useParams();
     const course = courses.find((c) => c.id === id);
+    const [status, setStatus] = useState("");
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         (async function () {
-        const cal = await getCalApi({"namespace":"14t-wheeled-excavator-gps-tilt-rotator-training"});
+        const cal = await getCalApi({"namespace": course?.id});
         cal("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#79D35E"},"dark":{"cal-brand":"#fff"}},"hideEventTypeDetails":true,"layout":"month_view"});
         })();
     }, [])
+
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        const form = e.currentTarget;
+
+        // Honeypot check
+        const honeypot = (form.elements.namedItem("honeypot-1223") as HTMLInputElement).value;
+        if (honeypot) {
+            console.warn("Bot detected! Form not submitted.");
+            return;
+        }
+
+        setLoading(true);
+        setStatus(""); // clear previous status
+
+        emailjs
+        .sendForm(
+            "service_tumj0n1",
+            "template_bindqsh",
+            form,
+            "DLa_hSipoh4g9aKq6"
+        )
+        .then(
+            () => {
+                setStatus("Form submitted! We will contact you soon.");
+                form.reset();
+            },
+            (error) => {
+                setStatus("Oops! Something went wrong. Please try again.");
+                console.error(error.text);
+            }
+        ).finally(() => {
+            setLoading(false);
+        });
+    };
 
 
     if (!course) return <div className="text-center py-20">Course not found.</div>;
@@ -59,8 +99,8 @@ const CourseOverviewScreen = () => {
                             <p className="text-lg text-gray-700">{course.summary}</p>
                             <p className="text-xl font-semibold">Cost: {course.price}</p>
                             <button
-                                data-cal-namespace="14t-wheeled-excavator-gps-tilt-rotator-training"
-                                data-cal-link="njatrainingsolutions/14t-wheeled-excavator-gps-tilt-rotator-training"
+                                data-cal-namespace={course.id}
+                                data-cal-link={`njatrainingsolutions/${course.id}`}
                                 data-cal-config='{"layout":"month_view"}'
                                 className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-3 rounded-lg shadow-lg transition w-full md:w-1/2"
                             >
@@ -78,8 +118,20 @@ const CourseOverviewScreen = () => {
                 {/* Description */}
                 <div dangerouslySetInnerHTML={{ __html: course.course_overview }} />
 
+                <div>
+                    <h2 className="text-2xl font-bold mb-4">Online Theory Requirements</h2>
+                    <p className="text-gray-700 leading-relaxed">
+                        Some of our courses include an online theory component that must be completed before attending your practical 
+                        training session. Other courses may require classroom-based theory delivered on the day. After booking, please 
+                        check your confirmation and follow-up emails for instructions on accessing and completing your online theory. 
+                        If you’re unsure about the requirements for your course, contact us prior to your training date so we can ensure 
+                        everything is completed and you are fully prepared.
+                    </p>
+                </div>
+
+
                 {/* Additional Requirements */}
-               <div>
+                <div>
                     <h2 className="text-2xl font-bold mb-4">Pre-requisites & Requirements</h2>
                     <ul className="list-disc pl-6 space-y-2 text-gray-700">
                         <li><strong>Age Requirement:</strong> Participants must be 18 years or older.</li>
@@ -97,7 +149,7 @@ const CourseOverviewScreen = () => {
                 <div className="mx-auto bg-blue-50 border-l-4 border-primary p-6 rounded-lg shadow-sm mt-8">
                     <h2 className="text-2xl font-bold mb-4 text-primary">Looking to Book Multiple Days?</h2>
                     <p className="text-gray-700 leading-relaxed mb-4">
-                        If you’re planning to book training over a few days or need a tailored schedule, we can help! Fill out the enquiry form below and our team will work with you to reserve a suitable time slot that fits your needs.
+                        If you’re planning to book training over a  days or need a tailored schedule, we can help! Fill out the enquiry form below and our team will work with you to reserve a suitable time slot that fits your needs.
                     </p>
                     <p className="text-gray-700 font-semibold">
                         We’ll contact you promptly to confirm availability and arrange your training sessions.
@@ -109,48 +161,74 @@ const CourseOverviewScreen = () => {
                 {/* Contact / Enquiry */}
                 <div className="max-w-2-xl bg-white shadow-lg border border-gray-50 rounded-lg p-6">
                     <h2 className="text-2xl font-bold mb-4">Enquire</h2>
-                    <form
-                        className="grid grid-cols-1 md:grid-cols-2 gap-6"
-                        onSubmit={(e) => {
-                            e.preventDefault();
-                            // TODO: Add Cal.com integration or form submission
-                            console.log("Form submitted for", course.id);
-                        }}
-                    >
-                        <input
-                            type="text"
-                            placeholder="Full Name*"
-                            required
-                            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none"
-                        />
-                        <input
-                            type="email"
-                            placeholder="Email*"
-                            required
-                            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none"
-                        />
-                        <input
-                            type="tel"
-                            placeholder="Phone*"
-                            required
-                            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none"
-                        />
-                        <input
-                            type="text"
-                            placeholder="Subject"
-                            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none"
-                        />
-                        <textarea
-                            placeholder="Message"
-                            className="w-full md:col-span-2 border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none"
-                        />
-                        <button
-                            type="submit"
-                            className="w-full md:col-span-2 bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-3 rounded-lg shadow-lg transition"
-                        >
-                            Submit Enquiry
-                        </button>
-                    </form>
+                    {status !== "" ? (
+                        <>
+                            <div className="w-full md:col-span-2 bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg flex items-center gap-3">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5 text-green-600"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M5 13l4 4L19 7"
+                                    />
+                                </svg>
+
+                                <span className="font-medium">
+                                    Your enquiry has been sent successfully! We'll get back to you shortly.
+                                </span>
+                            </div>
+                        </>
+                    ) : (
+                        <>
+                            <form
+                                className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                                onSubmit={handleSubmit}
+                            >
+                                <input type="text" name="honeypot-1223" style={{ display: "none" }} autoComplete="off" />
+                                <input
+                                    type="text"
+                                    placeholder="Full Name*"
+                                    required
+                                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none"
+                                />
+                                <input
+                                    type="email"
+                                    placeholder="Email*"
+                                    required
+                                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none"
+                                />
+                                <input
+                                    type="tel"
+                                    placeholder="Phone*"
+                                    required
+                                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none"
+                                />
+                                <input
+                                    type="text"
+                                    placeholder="Subject"
+                                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none"
+                                />
+                                <textarea
+                                    placeholder="Message"
+                                    className="w-full md:col-span-2 border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none"
+                                />
+                                <button
+                                    type="submit"
+                                    className="w-full md:col-span-2 bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-3 rounded-lg shadow-lg transition"
+                                    disabled={loading}
+                                >
+                                    {/* Submit Enquiry */}
+                                    {loading ? "Sending..." : "Submit Enquiry"}
+                                </button>
+                            </form>
+                        </>
+                    )}
                 </div>
 
             </section>

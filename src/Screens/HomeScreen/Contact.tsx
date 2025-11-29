@@ -11,10 +11,10 @@ const Contact = () => {
         const form = e.currentTarget;
 
         // Honeypot check
-        const honeypot = (form.elements.namedItem("honeypot") as HTMLInputElement).value;
+        const honeypot = (form.elements.namedItem("honeypot-1223") as HTMLInputElement).value;
         if (honeypot) {
             console.warn("Bot detected! Form not submitted.");
-        return;
+            return;
         }
 
         setLoading(true);
@@ -56,7 +56,7 @@ const Contact = () => {
                         <h4 className="text-lg font-bold">Request a callback</h4>
                         <form className="mt-4 space-y-3" onSubmit={handleSubmit}>
                             {/* Honeypot field */}
-                            <input type="text" name="honeypot" style={{ display: "none" }} autoComplete="off" />
+                            <input type="text" name="honeypot-1223" style={{ display: "none" }} autoComplete="off" />
 
                             <input
                                 placeholder="Your name"

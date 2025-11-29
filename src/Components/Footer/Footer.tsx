@@ -140,6 +140,12 @@ export const Footer = () => {
                     <a href="/legals/terms-and-conditions" className="hover:text-primary">Terms of Service</a>
                 </div>
             </div>
+             {/* Footer Bottom Section */}
+                <div className="flex flex-col md:flex-row justify-end items-center text-sm text-gray-400 mx-6 mt-4 md:mt-0">
+                    <p>
+                        Website made by <a className="text-gray-400 hover:text-red-300" href="https://www.tokyodigital.com.au" target="_blank" rel="noopener noreferrer">Tokyo Digital</a>
+                    </p>
+                </div>
         </footer>
     );
 };

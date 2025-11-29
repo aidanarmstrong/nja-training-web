@@ -5,6 +5,8 @@ import digger from "@/assets/images/digger.png";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Chip, Tooltip } from "@mui/material";
+import { FaChevronLeft, FaChevronRight, FaUserAlt } from "react-icons/fa";
+import Slider from "react-slick";
 
 const CoursesScreen = () => {
     const courses = coursesData; // keep IDs
@@ -17,6 +19,7 @@ const CoursesScreen = () => {
         const matchesDropdown = selectedCourse ? course.title === selectedCourse : true;
         return matchesSearch && matchesDropdown;
     });
+
 
     return (
         <div className="bg-white min-h-screen">
@@ -47,7 +50,7 @@ const CoursesScreen = () => {
                             )}&body=${encodeURIComponent(
                                 "Hi NJA Team,\n\nI am interested in learning more about your training courses. Could you please provide more details?\n\nName:\nPhone:\nPreferred Courses:\n\nThank you!"
                             )}`}
-                            className="bg-transparent text-white px-6 border-2 border-primary py-3 rounded-lg font-semibold hover:bg-white hover:border-white hover:text-black transition 3s"
+                            className="bg-transparent text-white px-6 border-2 border-white py-3 rounded-lg font-semibold hover:bg-primary hover:border-primary hover:text-white transition 3s"
                         >
                             Request More Info
                         </a>
@@ -116,35 +119,55 @@ const CoursesScreen = () => {
                                 key={course.id}
                                 className="border rounded-2xl hover:shadow transition bg-white flex flex-col overflow-hidden"
                             >
-                                {/* Course Image */}
-                                <div className="h-48 w-full flex items-center justify-center overflow-hidden">
-                                    <img
-                                        src={course.image[0]}
-                                        alt={course.title}
-                                        className="h-full w-full object-cover"
-                                    />
+                                {/* Course Image or Slider */}
+                               <div className="w-full h-ful relative">
+                                    <Slider
+                                        dots={true}
+                                        arrows={true}
+                                        infinite={true}
+                                        slidesToShow={course.image.length}
+                                        speed={500}
+                                        slidesToScroll={1}
+                                    >
+                                        {course.image.map((imgSrc, idx) => (
+                                            <div key={idx} className="w-full h-48">
+                                                <img
+                                                    src={imgSrc}
+                                                    alt={`${course.title} ${idx + 1}`}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            </div>
+                                        ))}
+                                    </Slider>
                                 </div>
 
                                 {/* Content */}
                                 <div className="px-6 pb-6 pt-4 flex flex-col flex-grow">
-                                    <h3 className="text-xl font-bold text-slate-900 mb-3">
-                                        {course.title}
-                                    </h3>
-                                   <div className="flex flex-row flex-wrap gap-2">
+                                    <h3 className="text-xl font-bold text-slate-900 mb-3">{course.title}</h3>
+                                    
+                                    <div className="flex flex-row flex-wrap gap-2 mb-3">
                                         {course.code?.map((codeItem: string, index: number) => (
                                             <Tooltip key={index} title={course.codeName[index]}>
-                                            <Chip label={codeItem} />
+                                                <Chip label={codeItem} />
                                             </Tooltip>
                                         ))}
                                     </div>
-                                    <p className="text-slate-600 text-base mb-5">
-                                        {course.summary}
-                                    </p>
+
+                                    <p className="text-slate-600 text-base mb-5">{course.summary}</p>
 
                                     <div className="flex items-center justify-between text-slate-700 font-medium mb-4">
                                         <span>{course.duration || "Duration TBD"}</span>
                                         <strong>{course.price || "Price TBD"}</strong>
                                     </div>
+
+                                    {course.groups && (
+                                        <div className="flex text-slate-700 font-medium mb-4">
+                                            <div className="flex flex-row items-center gap-2">
+                                                <FaUserAlt />
+                                                <p>{course.groups}</p>
+                                            </div>
+                                        </div>
+                                    )}
 
                                     {/* View Course CTA */}
                                     <Link

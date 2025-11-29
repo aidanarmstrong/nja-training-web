@@ -9,7 +9,7 @@ import telehandler from "@/assets/images/courses/telehandler.png";
 import waterCart from "@/assets/images/courses/watercart.png";
 import tiptruck from "@/assets/images/courses/tiptruck.png";
 import ArticulatedWaterCart from "@/assets/images/courses/articulated-water-cart.png";
-import ArticulatedDumpTruck from "@/assets/images/courses/articulated-dump-truck.png"
+import ArticulatedDumpTruck from "@/assets/images/courses/articulated-dump-truck.png";
 import ExperiencedCourseImage from "@/assets/images/courses/experience_course.png";
 
 const CourseData = [
@@ -53,10 +53,11 @@ const CourseData = [
                     Participants must either have completed, or be working alongside someone who has completed the relevant unit.
                 </p>
             </div>
-        `
+        `,
+        groups: 1,
     },
     {
-        id: "14t-track-machine-gps-training",
+        id: "14t-ton-track-machine-training-gps",
         title: "14-Ton Track Machine Training (GPS)",
         summary: "Hands-on training for operating a 14-ton tracked excavator with GPS guidance.",
         duration: "1 day",
@@ -94,10 +95,11 @@ const CourseData = [
                     Participants must either have completed, or be working alongside someone who has completed the relevant unit.
                 </p>
             </div>
-        `
+        `,
+        groups: 1,
     },
     {
-        id: "gps-only-course",
+        id: "gps-only-for-ticket-holders",
         title: "GPS Only – For Ticket Holders",
         summary: "This course is for participants who already hold the necessary tickets and just need practical on-site experience. Gain hands-on practice safely and efficiently.",
         duration: "4-6 Hours",
@@ -130,10 +132,11 @@ const CourseData = [
                     Note: This is a skills training session only. No formal qualification or Statement of Attainment will be issued. The course is intended solely for participants to gain confident, practical experience.
                 </p>
             </div>
-        `
+        `,
+        groups: 1,
     },
     {
-        id: "skid-steer-loader-grader-attachment-gps-training",
+        id: "skid-steer-loader-training-grader-attachment-gps",
         title: "Skid Steer Loader Training (Grader Attachment) (GPS)",
         summary: "Enhance your Skid Steer skills with GPS-guided grader attachment training. Perfect as an optional add-on to any machine course.",
         duration: "4-6 Hours",
@@ -176,11 +179,12 @@ const CourseData = [
                     <strong>RIIHAN308F – Load and Unload Plant</strong> (or an equivalent qualification) to safely perform these tasks.
                 </p>
             </div>
-        `
+        `,
+        groups: 1,
 
     },
     {
-        id: "trench-box-support-install-training",
+        id: "trench-support-trench-box-install",
         title: "Trench Support & Trench Box Install",
         summary: "Learn how to install trench supports and build and place trench boxes safely and correctly.",
         duration: "2-4 Hours",
@@ -220,7 +224,8 @@ const CourseData = [
                     All assessments must be completed in English without translator assistance.
                 </p>
             </div>
-        `
+        `,
+        groups: 4,
 
     },
     {
@@ -258,16 +263,17 @@ const CourseData = [
                     Note: Completion of this unit alone does not provide sufficient skill to independently load or unload equipment. Operators must either have completed, or be working alongside someone who has completed <strong>RIIHAN308F – Load and Unload Plant</strong> or an equivalent qualification to safely perform these tasks.
                 </p>
             </div>
-        `
+        `,
+        groups: 4,
     },
     {
-        id: "itc-operator-training",
+        id: "itc-operator-training-integrated-tool-carrier",
         title: "ITC Operator Training (Integrated Tool Carrier)",
         summary: "Practical ICT operator training covering machine setup, attachments, safety and site operation.",
         duration: "4-6 Hours",
         price: " $550",
         code: ["RIIHAN311F"],
-        codeName: "Conduct Operations With Integrated Tool Carrier",
+        codeName: ["Conduct Operations With Integrated Tool Carrier"],
         image: [course1],
         course_overview: `
             <div>
@@ -297,7 +303,8 @@ const CourseData = [
                     Operators must either have completed, or work alongside someone who has completed <strong>RIIHAN308F – Load and Unload Plant</strong> or an equivalent qualification to perform these tasks safely.
                 </p>
             </div>
-        `
+        `,
+        groups: 4,
 
     },
     {
@@ -307,7 +314,7 @@ const CourseData = [
         duration: "4-6 Hours",
         price: " $550",
         code: ["RIIHAN309F"],
-        codeName: "Conduct Telescopic Materials Handler Operations",
+        codeName: ["Conduct Telescopic Materials Handler Operations"],
         image: [telehandler],
         course_overview: `
             <div>
@@ -338,7 +345,8 @@ const CourseData = [
                     Participants must either have completed, or work alongside someone who has completed <strong>RIIHAN308F – Load and Unload Plant</strong> or an equivalent qualification to safely perform these tasks.
                 </p>
             </div>
-        `
+        `,
+        groups: 4,
 
     },
     {
@@ -348,7 +356,7 @@ const CourseData = [
         duration: "4-6 Hours",
         price: " $550",
         code: ["RIIMPO326E"],
-        codeName: "Conduct Water Truck Operations",
+        codeName: ["Conduct Water Truck Operations"],
         image: [waterCart],
         course_overview: `
             <div>
@@ -377,7 +385,8 @@ const CourseData = [
                     Upon successful completion, participants will receive a Statement of Attainment for this unit.
                 </p>
             </div>
-        `
+        `,
+        groups: 4,
 
     },
     {
@@ -387,8 +396,9 @@ const CourseData = [
         duration: "4-6 Hours",
         price: "$550",
         code: ["RIIVEH304E"],
-        codeName: "Conduct Tip Truck Operations",
+        codeName: ["Conduct Tip Truck Operations"],
         image: [tiptruck],
+        bookingLink: 'njatrainingsolutions/articulated-water-cart-dump-truck-operator-training',
         course_overview: `
             <div>
                 <h2 class="text-2xl font-bold mb-4">Candidate Requirements</h2>
@@ -424,11 +434,12 @@ const CourseData = [
                     Note: Completion of this unit alone does not provide sufficient skill to independently load and unload equipment. Operators must either have completed, or work alongside someone who has completed <strong>RIIHAN308F – Load and Unload Plant</strong> or an equivalent qualification to perform these tasks safely.
                 </p>
             </div>
-        `
+        `,
+        groups: 4,
 
     },
     {
-        id: "articulated-water-cart-and-dump-truck-training",
+        id: "articulated-water-cart-dump-truck-operator-training",
         title: "Articulated Water Cart & Dump Truck Operator Training",
         summary: "Get hands-on experience operating hydrema articulated water carts and thwaites dump trucks safely and efficiently. This one-day course covers loading, unloading, maneuvering, and essential on-site best practices.",
         duration: "4-6 Hours",
@@ -436,6 +447,7 @@ const CourseData = [
         code: ["RIIMPO326E", "RIIVEH304E"],
         codeName: ["Conduct Water Truck Operations", "Conduct Tip Truck Operations"],
         image: [ArticulatedWaterCart, ArticulatedDumpTruck],
+        bookingLink: 'njatrainingsolutions/articulated-water-cart-dump-truck-operator-training',
         course_overview: `
             <div>
                 <h2 class="text-2xl font-bold mb-4">Course Overview</h2>
@@ -473,7 +485,8 @@ const CourseData = [
                     Note: Completion of this course alone does not provide sufficient skill to load or unload equipment independently. Operators must either have completed, or work alongside someone who has completed <strong>RIIHAN308F – Load and Unload Plant</strong> or an equivalent qualification to safely perform these tasks.
                 </p>
             </div>
-        `
+        `,
+        groups: 4,
     }
 ];
 
