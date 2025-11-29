@@ -5,7 +5,7 @@ import digger from "@/assets/images/digger.png";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Chip, Tooltip } from "@mui/material";
-import { FaChevronLeft, FaChevronRight, FaUserAlt } from "react-icons/fa";
+import { FaUserAlt } from "react-icons/fa";
 import Slider from "react-slick";
 
 const CoursesScreen = () => {
