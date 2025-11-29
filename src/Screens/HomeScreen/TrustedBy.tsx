@@ -35,7 +35,7 @@ export const TrustedBy = () => {
     const settings = {
         dots: false,
         infinite: true,
-        speed: 10000,
+        speed: 7000,
         arrows: false, 
         slidesToShow: 4, // number of logos visible
         slidesToScroll: 1,
@@ -54,9 +54,10 @@ export const TrustedBy = () => {
             },
             {
                 breakpoint: 480,
-                settings: { slidesToShow: 1 },
+                settings: { slidesToShow: 2 }, // mobile = 2
             },
         ],
+
     };
 
     return (
@@ -76,25 +77,27 @@ export const TrustedBy = () => {
                 {/* Carousel */}
                 <Slider {...settings} className="flex items-center">
                     {logos.map((logo, index) => (
-                        <div key={index} className="flex justify-center px-4">
+                        <div key={index} className="flex justify-center px-6 min-w-[160px]">
                             {logo.website_url ? (
                                 <a href={logo.website_url} target="_blank" rel="noopener noreferrer">
                                     <img 
                                         src={logo.src} 
                                         alt={logo.alt} 
-                                        className="h-28 sm:h-36 lg:h-32 object-contain invert brightness-0 saturate-0 opacity-80 hover:opacity-100"
+                                        className="h-32 sm:h-36 md:h-40 lg:h-32 object-contain invert brightness-0 saturate-0 opacity-80 hover:opacity-100"
                                     />
                                 </a>
                             ) : (
                                 <img 
                                     src={logo.src} 
                                     alt={logo.alt} 
-                                    className="h-28 sm:h-36 lg:h-32 object-contain invert brightness-0 saturate-0 opacity-80 hover:opacity-100"
+                                    className="h-32 sm:h-36 md:h-40 lg:h-32 object-contain invert brightness-0 saturate-0 opacity-80 hover:opacity-100"
                                 />
                             )}
                         </div>
                     ))}
                 </Slider>
+
+
             </div>
         </section>
     );
