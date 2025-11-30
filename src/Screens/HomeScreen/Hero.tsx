@@ -1,5 +1,5 @@
 import { FcCheckmark } from "react-icons/fc";
-import HeroVideo from "../../assets/videos/hero-video.mp4";
+import HeroVideo from "../../assets/videos/hero-video-2.mp4";
 
 const Hero = () => {
     return (
@@ -15,7 +15,7 @@ const Hero = () => {
             />
 
             {/* Overlay gradient */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80" />
 
             <div className="relative max-w-7xl mx-auto px-6 lg:px-12 py-36 md:py-64">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">

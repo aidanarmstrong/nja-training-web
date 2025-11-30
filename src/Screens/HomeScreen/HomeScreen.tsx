@@ -20,6 +20,8 @@ import { IoMdShareAlt } from "react-icons/io";
 import { TrustedBy } from "./TrustedBy";
 import TwoPeople from "@/assets/images/labour-hire.png";
 import FAQ from "./faqs";
+import { Helmet } from "@dr.pogodin/react-helmet";
+import { useRef, useState } from "react";
 
 const Information = () => {
     return (
@@ -54,6 +56,22 @@ const Information = () => {
 };
 
 const AboutSection = () => {
+    const videoRef = useRef<HTMLVideoElement | null>(null);
+    const [isPlaying, setIsPlaying] = useState(true);
+
+    const togglePlay = () => {
+        const v = videoRef.current;
+        if (!v) return;
+
+        if (v.paused) {
+            v.play();
+            setIsPlaying(true);
+        } else {
+            v.pause();
+            setIsPlaying(false);
+        }
+    };
+    
     return (
         <section id="about" className="py-20 bg-slate-50">
             <div className="max-w-6xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -86,47 +104,57 @@ const AboutSection = () => {
                 </div>
 
                 <div className="flex justify-center py-12">
-                    <div className="relative w-[300px] sm:w-[400px] md:w-[450px] lg:w-[500px] aspect-[9/16] rounded-xl overflow-hidden shadow-2xl border border-gray-200 bg-black">
-                        
-                        {/* Video */}
-                        <video
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="absolute inset-0 w-full h-full object-cover"
-                        >
-                            <source src={Digger2Video} type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
+                    <div className="relative w-[350px] sm:w-[450px] md:w-[400px] lg:w-[400px] aspect-[9/16] rounded-xl overflow-hidden shadow-2xl border border-gray-200 bg-black">
 
-                        {/* Overlay gradient for a TikTok feel */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30"></div>
+                        {/* Video Container */}
+                        <div className="relative w-full h-full">
+                            <video
+                                ref={videoRef}
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                onClick={togglePlay}
+                                className="absolute inset-0 w-full h-full object-cover cursor-pointer"
+                            >
+                                <source src={Digger2Video} type="video/mp4" />
+                            </video>
 
-                        {/* Optional bottom label / CTA */}
+                            {/* Play Icon Overlay (only shows when paused) */}
+                            <div
+                                onClick={togglePlay}
+                                className="absolute inset-0 flex items-center justify-center text-white text-6xl cursor-pointer"
+                            >
+                                {!isPlaying && <span className="drop-shadow-2xl">▶</span>}
+                            </div>
+
+                        </div>
+
+                        {/* Gradient Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" onClick={togglePlay}></div>
+
+                        {/* Bottom CTA Overlay */}
                         <div className="absolute bottom-0 left-0 right-0 pb-12 p-2 md:p-4">
-                            {/* Gradient background */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 pointer-events-none"></div>
 
-                            {/* Overlay content */}
                             <div className="relative flex justify-between items-end text-white">
                                 <div>
-                                    <span className="block font-bold text-sm">NJA Training Solutions</span>
-                                    <span className="block text-xs text-white/80 mt-1">
-                                        Follow our TikTok to stay up-to-date
-                                    </span>
+                                <span className="block font-bold text-sm">NJA Training Solutions</span>
+                                <span className="block text-xs text-white/80 mt-1">
+                                    Follow our TikTok to stay up-to-date
+                                </span>
                                 </div>
-                                <a 
+                                <a
                                     href="https://www.tiktok.com/@njatrainingsolutions"
                                     target="_blank"
-                                    className="bg-white text-black font-bold px-4 py-1 rounded-full shadow-md hover:bg-white/90 transition cursor-pointer"
+                                    className="bg-white text-black font-bold px-4 py-1 rounded-full shadow-md hover:bg-white/90 transition cursor-pointer text-xs"
                                 >
                                     Follow
                                 </a>
                             </div>
                         </div>
 
-                        {/* Optional side like/comment bar */}
+                        {/* Right Side Action Bar */}
                         <div className="absolute right-3 bottom-28 md:bottom-36 flex flex-col items-center space-y-4 md:space-y-6 text-white">
                             <div className="flex flex-col items-center text-center">
                                 <FaHeart className="text-2xl md:text-3xl text-red-500" />
@@ -142,12 +170,13 @@ const AboutSection = () => {
                                 <FaBookmark className="text-2xl md:text-3xl" />
                                 <span className="text-md">15</span>
                             </div>
-                             <div className="flex flex-col items-center text-center">
+
+                            <div className="flex flex-col items-center text-center">
                                 <IoMdShareAlt className="text-3xl md:text-4xl" />
                                 <span className="text-md">10</span>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
 
@@ -160,73 +189,92 @@ const AboutSection = () => {
 const HomeScreen = () => {
 
     return (
-        <div className="font-inter antialiased text-slate-900">
-            <Navbar />
-            <main>
-                <Hero />
-                <TrustedBy/>
-                <div className="relative w-full h-64 md:h-96 overflow-hidden">
-                    {/* Background image */}
-                    <img
-                        src={Excavator} // replace PanVideo with your image import or URL
-                        alt="Header Background"
-                        className="absolute w-full h-full object-cover"
-                    />
+        <>
+            <Helmet>
+                <title>NJA Training Solutions — GPS Machine Control, Excavator Training & VOC Certifications</title>
 
-                    {/* Overlay to darken image for better text contrast */}
-                    <div className="absolute inset-0 bg-black bg-opacity-15"></div>
+                <meta
+                    name="description"
+                    content="NJA Training Solutions delivers industry-leading GPS machine control training, excavator operator courses, plant machinery tickets and VOC certifications across Australia. Get qualified fast with expert trainers."
+                />
 
-                    {/* CTA content */}
-                    <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
-                        <h2 className="text-2xl md:text-4xl font-bold ml-[100px] mt-[22px] md:ml-[330px] md:mt-[80px]">
-                            Ready to get started?
-                        </h2>
-                    </div>
-                </div>
+                <link rel="canonical" href="https://www.njatrainingsolutions.com.au/" />
 
+                <meta property="og:title" content="All NJA Training Courses" />
+                <meta
+                    property="og:description"
+                    content="NJA Training Solutions delivers industry-leading GPS machine control training, excavator operator courses, plant machinery tickets and VOC certifications across Australia. Get qualified fast with expert trainers."
+                />
+                <meta property="og:url" content="https://www.njatrainingsolutions.com.au/" />
+            </Helmet>
+            <div className="font-inter antialiased text-slate-900">
+                <Navbar />
+                <main>
+                    <Hero />
+                    <TrustedBy/>
+                    <div className="relative w-full h-64 md:h-96 overflow-hidden">
+                        {/* Background image */}
+                        <img
+                            src={Excavator} // replace PanVideo with your image import or URL
+                            alt="Header Background"
+                            className="absolute w-full h-full object-cover"
+                        />
 
-                <CoursesSection />
-                <AboutSection />
-                <section className="nja-training-section py-12 px-6">
-                    <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-8">
+                        {/* Overlay to darken image for better text contrast */}
+                        <div className="absolute inset-0 bg-black bg-opacity-15"></div>
 
-                        {/* Left side image */}
-                        <div className="flex-1">
-                            <img
-                                src={TwoPeople}
-                                alt="Machine Training"
-                                className="w-full rounded-lg shadow-lg object-cover"
-                            />
-                        </div>
-
-                        {/* Right side text */}
-                        <div className="flex-1 space-y-4">
-                            <h2 className="text-3xl font-bold mb-4 text-secondary">
-                                Level Up With NJA 
+                        {/* CTA content */}
+                        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+                            <h2 className="text-2xl md:text-4xl font-bold ml-[100px] mt-[22px] md:ml-[330px] md:mt-[80px]">
+                                Ready to get started?
                             </h2>
-
-                            <p>
-                                Already got your tickets? Awesome! But why stop there? Staying ahead in the machine-tech world means learning the latest GPS systems, attachments, and control tricks. At NJA Training Solutions, we make upskilling fun and practical—so you stay sharp and confident on every job.
-                            </p>
-
-                            <p>
-                                Employers love operators who can do more than the basics. The more skills you pick up, the more valuable you become, and the more doors you open for exciting opportunities. Think of it as leveling up your career—without the boring grind.
-                            </p>
-
-                            <p>
-                                Whether it’s mastering new attachments or refining your GPS skills, our training keeps you ahead of the game. Be capable, be confident.
-                            </p>
                         </div>
-
                     </div>
-                </section>
-                <FAQ />
-                <Information/>
-                <Testimonials />
-                <Contact />
-            </main>
-            <Footer />
-        </div>
+
+
+                    <CoursesSection />
+                    <AboutSection />
+                    <section className="nja-training-section py-12 px-6">
+                        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-8">
+
+                            {/* Left side image */}
+                            <div className="flex-1">
+                                <img
+                                    src={TwoPeople}
+                                    alt="Machine Training"
+                                    className="w-full rounded-lg shadow-lg object-cover"
+                                />
+                            </div>
+
+                            {/* Right side text */}
+                            <div className="flex-1 space-y-4">
+                                <h2 className="text-3xl font-bold mb-4 text-secondary">
+                                    Level Up With NJA 
+                                </h2>
+
+                                <p>
+                                    Already got your tickets? Awesome! But why stop there? Staying ahead in the machine-tech world means learning the latest GPS systems, attachments, and control tricks. At NJA Training Solutions, we make upskilling fun and practical—so you stay sharp and confident on every job.
+                                </p>
+
+                                <p>
+                                    Employers love operators who can do more than the basics. The more skills you pick up, the more valuable you become, and the more doors you open for exciting opportunities. Think of it as leveling up your career—without the boring grind.
+                                </p>
+
+                                <p>
+                                    Whether it’s mastering new attachments or refining your GPS skills, our training keeps you ahead of the game. Be capable, be confident.
+                                </p>
+                            </div>
+
+                        </div>
+                    </section>
+                    <FAQ />
+                    <Information/>
+                    <Testimonials />
+                    <Contact />
+                </main>
+                <Footer />
+            </div>
+        </>
     );
 }
 
