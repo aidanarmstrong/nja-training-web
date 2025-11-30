@@ -269,7 +269,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                         </button>
 
                         <button
-                            onClick={() => handleScrollOrNavigate("#reviews", "/")}
+                            onClick={() => handleScrollOrNavigate("#testimonials", "/")}
                             className="text-4xl font-bold text-white hover:text-gray-300 z-10"
                         >
                             Reviews
