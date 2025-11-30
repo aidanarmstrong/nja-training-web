@@ -18,7 +18,7 @@ import Hero from "./Hero";
 import { FaBookmark, FaCommentDots, FaHeart } from "react-icons/fa6";
 import { IoMdShareAlt } from "react-icons/io";
 import { TrustedBy } from "./TrustedBy";
-import TwoPeople from "@/assets/images/labour-hire.png";
+import LevelUp from "@/assets/images/level-up.png";
 import FAQ from "./faqs";
 import { Helmet } from "@dr.pogodin/react-helmet";
 import { useRef, useState } from "react";
@@ -238,13 +238,16 @@ const HomeScreen = () => {
                         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-8">
 
                             {/* Left side image */}
-                            <div className="flex-1">
+                           <div className="flex-1 w-[300px] rounded-xl shadow-2xl overflow-hidden relative border border-gray-300">
                                 <img
-                                    src={TwoPeople}
+                                    src={LevelUp}
                                     alt="Machine Training"
-                                    className="w-full rounded-lg shadow-lg object-cover"
+                                    className="w-full h-full object-cover"
                                 />
+                                {/* Optional overlay gradient to blend */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-black/10 pointer-events-none"></div>
                             </div>
+
 
                             {/* Right side text */}
                             <div className="flex-1 space-y-4">
