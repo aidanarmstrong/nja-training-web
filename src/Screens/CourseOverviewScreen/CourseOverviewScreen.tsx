@@ -184,7 +184,7 @@ const CourseOverviewScreen = () => {
                     <div className="mx-auto bg-blue-50 border-l-4 border-primary p-6 rounded-lg shadow-sm mt-8">
                         <h2 className="text-2xl font-bold mb-4 text-primary">Looking to Book Multiple Days?</h2>
                         <p className="text-gray-700 leading-relaxed mb-4">
-                            If you’re planning to book training over a  days or need a tailored schedule, we can help! Fill out the enquiry form below and our team will work with you to reserve a suitable time slot that fits your needs.
+                            If you’re planning to book training over a few days or need a tailored schedule, we can help! Fill out the enquiry form below and our team will work with you to reserve a suitable time slot that fits your needs.
                         </p>
                         <p className="text-gray-700 font-semibold">
                             We’ll contact you promptly to confirm availability and arrange your training sessions.

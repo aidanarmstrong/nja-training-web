@@ -64,7 +64,7 @@ const CoursesScreen = () => {
                         </p>
                         <div className="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
                             <a
-                                href={`mailto:hello@nja.com?subject=${encodeURIComponent(
+                                href={`mailto:hello@njatrainingsolutions.com?subject=${encodeURIComponent(
                                     "Inquiry About NJA Training Courses"
                                 )}&body=${encodeURIComponent(
                                     "Hi NJA Team,\n\nI am interested in learning more about your training courses. Could you please provide more details?\n\nName:\nPhone:\nPreferred Courses:\n\nThank you!"

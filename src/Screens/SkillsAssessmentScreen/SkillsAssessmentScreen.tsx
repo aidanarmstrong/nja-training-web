@@ -51,7 +51,7 @@ const SkillsAssessmentScreen = () => {
                     </p>
 
                     <a 
-                        href={`mailto:hello@nja.com?subject=${encodeURIComponent(
+                        href={`mailto:hello@njatrainingsolutions.com?subject=${encodeURIComponent(
                             "Book a Skills Assessment"
                         )}`}
                         className="bg-primary text-white font-semibold text-lg px-10 py-4 rounded-2xl shadow-xl hover:bg-primary/80 transition"
@@ -206,7 +206,7 @@ const SkillsAssessmentScreen = () => {
                 </p>
 
                <a
-                    href={`mailto:hello@nja.com?subject=${encodeURIComponent(
+                    href={`mailto:hello@njatrainingsolutions.com?subject=${encodeURIComponent(
                         "Book a Skills Assessment"
                     )}`}
                     className="bg-white text-primary font-semibold text-lg px-10 py-4 rounded-2xl shadow-xl hover:bg-gray-200 transition"
