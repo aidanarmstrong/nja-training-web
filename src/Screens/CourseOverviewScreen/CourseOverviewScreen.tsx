@@ -39,7 +39,7 @@ const CourseOverviewScreen = () => {
         emailjs
         .sendForm(
             "service_tumj0n1",
-            "template_bindqsh",
+            "template_goqh03k",
             form,
             "DLa_hSipoh4g9aKq6"
         )
@@ -230,27 +230,32 @@ const CourseOverviewScreen = () => {
                                         type="text"
                                         placeholder="Full Name*"
                                         required
+                                        name="user_name"
                                         className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none"
                                     />
                                     <input
                                         type="email"
                                         placeholder="Email*"
+                                        name="user_email"
                                         required
                                         className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none"
                                     />
                                     <input
                                         type="tel"
                                         placeholder="Phone*"
+                                        name="user_phone"
                                         required
                                         className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none"
                                     />
                                     <input
                                         type="text"
                                         placeholder="Subject"
+                                        name="subject"
                                         className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none"
                                     />
                                     <textarea
                                         placeholder="Message"
+                                        name="message"
                                         className="w-full md:col-span-2 border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none"
                                     />
                                     <button
