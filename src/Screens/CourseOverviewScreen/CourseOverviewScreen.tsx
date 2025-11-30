@@ -153,8 +153,8 @@ const CourseOverviewScreen = () => {
                             Some of our courses include an online theory component that <b>must</b> be completed before attending your practical 
                             training session. Other courses may require classroom-based theory delivered on the day. After booking, please 
                             check your confirmation and follow-up emails for instructions on accessing and completing your online theory. 
-                            If you’re unsure about the requirements for your course, contact us prior to your training date so we can ensure 
-                            everything is completed and you are fully prepared.
+                            <b> If you’re unsure about the requirements for your course, contact us prior to your training date so we can ensure 
+                            everything is completed and you are fully prepared.</b>
                         </p>
                     </div>
 

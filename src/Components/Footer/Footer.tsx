@@ -74,8 +74,8 @@ export const Footer = () => {
                     </h4>
                     <ul className="mt-4 space-y-2 text-sm">
                         <li><a href="/courses/all" className="hover:text-primary">All Training Courses</a></li>
-                        <li><a href="#about" className="hover:text-primary">About Us</a></li>
-                        <li><a href="#contact" className="hover:text-primary">Contact</a></li>
+                        <li><a href="/#about" className="hover:text-primary">About Us</a></li>
+                        <li><a href="/#contact" className="hover:text-primary">Contact</a></li>
                         <li><a href="/voc" className="hover:text-primary">VOC Assessments</a></li>
                     </ul>
                 </div>
@@ -89,7 +89,7 @@ export const Footer = () => {
                         {CourseData.slice(0, 4).map((course, index) => (
                             <li key={index}>
                                 <Link 
-                                    to={`/courses/${course.id}`} 
+                                    to={`/courses/${course.id}/overview`} 
                                     className="hover:text-primary transition"
                                 >
                                     {course.title}
