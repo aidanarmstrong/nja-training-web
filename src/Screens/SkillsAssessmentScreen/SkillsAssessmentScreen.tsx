@@ -191,7 +191,7 @@ const SkillsAssessmentScreen = () => {
             </section>
 
             {/* CTA */}
-            <section className="relative w-full py-24 px-6 bg-primary text-white text-center">
+            <section className="relative w-full py-24 px-6 bg-gray-800 text-white text-center">
                 <motion.h2
                     initial="hidden"
                     animate="show"
@@ -209,7 +209,7 @@ const SkillsAssessmentScreen = () => {
                     href={`mailto:hello@njatrainingsolutions.com?subject=${encodeURIComponent(
                         "Book a Skills Assessment"
                     )}`}
-                    className="bg-white text-primary font-semibold text-lg px-10 py-4 rounded-2xl shadow-xl hover:bg-gray-200 transition"
+                    className="bg-white text-secondary font-semibold text-lg px-10 py-4 rounded-2xl shadow-xl hover:bg-gray-200 transition"
                 >
                     Book Your Assessment
                 </a>
