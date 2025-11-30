@@ -1,5 +1,5 @@
 import { FcCheckmark } from "react-icons/fc";
-import HeroVideo from "../../assets/videos/hero-video-2.mp4";
+import HeroVideo from "../../assets/videos/hero-video.mp4";
 
 const Hero = () => {
     return (

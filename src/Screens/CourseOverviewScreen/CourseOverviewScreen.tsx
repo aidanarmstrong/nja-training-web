@@ -123,19 +123,25 @@ const CourseOverviewScreen = () => {
                             </div>
 
                             {/* Text content */}
-                            <div className="lg:w-1/2 space-y-6">
+                           <div className="lg:w-1/2 space-y-6">
                                 <h1 className="text-4xl font-extrabold">{course.title}</h1>
-                                <p className="text-lg text-gray-700">{course.summary}</p>
-                                <p className="text-xl font-semibold">Cost: {course.price}</p>
-                                <button
-                                    data-cal-namespace={course.id}
-                                    data-cal-link={`njatrainingsolutions/${course.id}`}
-                                    data-cal-config='{"layout":"month_view"}'
-                                    className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-3 rounded-lg shadow-lg transition w-full md:w-1/2"
+
+                                <p className="text-lg text-gray-700">
+                                    {course.summary}
+                                </p>
+
+                                <p className="text-xl font-semibold">
+                                    Cost: {course.price}
+                                </p>
+
+                                <a
+                                    href="#enroll-form"
+                                    className="inline-flex bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-3 rounded-lg shadow-lg transition self-start"
                                 >
                                     Enroll Now
-                                </button>
+                                </a>
                             </div>
+
 
                         </div>
                     </div>
@@ -188,8 +194,8 @@ const CourseOverviewScreen = () => {
 
                     
                     {/* Contact / Enquiry */}
-                    <div className="max-w-2-xl bg-white shadow-lg border border-gray-50 rounded-lg p-6">
-                        <h2 className="text-2xl font-bold mb-4">Enquire</h2>
+                    <div id="enroll-form" className="max-w-2-xl bg-white shadow-lg border border-gray-50 rounded-lg p-6">
+                        <h2 className="text-2xl font-bold mb-4">Enroll or Enquire</h2>
                         {status !== "" ? (
                             <>
                                 <div className="w-full md:col-span-2 bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg flex items-center gap-3">

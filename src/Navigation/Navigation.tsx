@@ -6,6 +6,7 @@ import CoursesScreen from "@/Screens/CoursesScreen";
 import CourseOverviewScreen from "@/Screens/CourseOverviewScreen";
 import TermsConditions from "@/Screens/Legals/TermsConditions";
 import PrivacyPolicy from "@/Screens/Legals/PrivacyPolicy";
+import SkillsAssessmentScreen from "@/Screens/SkillsAssessmentScreen";
 
 const Navigation = () => {
 
@@ -24,6 +25,10 @@ const Navigation = () => {
             <ScrollToTop/>
             <Routes>
                 <Route path="/" element={<HomeScreen />} />
+
+                <Route path="/skills-assessment" element={<SkillsAssessmentScreen />} />
+                
+                {/* courses */}
                 <Route path="/courses/all" element={<CoursesScreen/>} />
                 <Route path="/courses/:id/overview" element={<CourseOverviewScreen />} />
                 

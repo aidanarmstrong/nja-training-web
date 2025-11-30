@@ -61,7 +61,7 @@ const CourseData = [
         title: "14-Ton Track Machine Training (GPS)",
         summary: "Hands-on training for operating a 14-ton tracked excavator with GPS guidance.",
         duration: "1 day",
-        price: " $750",
+        price: " $850",
         code: ["RIIMPO320F"],
         codeName: ["Conduct Civil Construction Excavator Operations"],
         image: [trackMachineWithGPS],
@@ -103,7 +103,7 @@ const CourseData = [
         title: "GPS Only – For Ticket Holders",
         summary: "This course is for participants who already hold the necessary tickets and just need practical on-site experience. Gain hands-on practice safely and efficiently.",
         duration: "4-6 Hours",
-        price: "$650",
+        price: "$750",
         code: [], 
         codeName: [],
         image: [ExperiencedCourseImage],
@@ -436,7 +436,6 @@ const CourseData = [
             </div>
         `,
         groups: 4,
-
     },
     {
         id: "articulated-water-cart-dump-truck-operator-training",

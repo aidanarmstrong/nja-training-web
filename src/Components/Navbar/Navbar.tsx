@@ -6,7 +6,7 @@ import { Logo } from "../../assets";
 interface NavbarProps {
     fixed?: boolean;
     defaultFilled?: boolean;
-    activeScreen?: "home" | "courses" | "about" | "contact" | "book";
+    activeScreen?: "home" | "courses" | "skills-assessment" | "about" | "contact" | "book";
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -150,6 +150,14 @@ export const Navbar: React.FC<NavbarProps> = ({
                             </button>
 
                             <button
+                                onClick={() => navigate("/skills-assessment")}
+                                className={linkClass("skills-assessment")}
+                            >
+                                Skills Assessment
+                            </button>
+
+
+                            <button
                                 onClick={() => handleScrollOrNavigate("#about", "/")}
                                 className={linkClass("about")}
                             >
@@ -259,6 +267,13 @@ export const Navbar: React.FC<NavbarProps> = ({
                             className="text-4xl font-bold text-white hover:text-gray-300 z-10"
                         >
                             Our Courses
+                        </button>
+
+                        <button
+                            onClick={() => navigate("/skills-assessment")}
+                            className="text-4xl font-bold text-white hover:text-gray-300 z-10"
+                        >
+                            Skills Assessment
                         </button>
 
                         <button

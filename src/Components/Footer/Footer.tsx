@@ -76,7 +76,7 @@ export const Footer = () => {
                         <li><a href="/courses/all" className="hover:text-primary">All Training Courses</a></li>
                         <li><a href="/#about" className="hover:text-primary">About Us</a></li>
                         <li><a href="/#contact" className="hover:text-primary">Contact</a></li>
-                        <li><a href="/voc" className="hover:text-primary">VOC Assessments</a></li>
+                        <li><a href="/skills-assessment" className="hover:text-primary">Skills Assessments</a></li>
                     </ul>
                 </div>
 
@@ -111,16 +111,6 @@ export const Footer = () => {
                 {/* RESOURCES + CONTACT */}
                 <div className="md:w-[120%]">
                     <h4 className="text-white text-lg font-semibold pb-2 border-b border-slate-700">
-                        Resources
-                    </h4>
-                    <ul className="mt-4 space-y-2 text-sm">
-                        <li>Student Info</li>
-                        <li>Compliance Docs</li>
-                        <li>Safety Guidelines</li>
-                        <li>Training Support</li>
-                    </ul>
-
-                    <h4 className="text-white text-lg font-semibold mt-8 pb-2 border-b border-slate-700">
                         Get in Touch
                     </h4>
                     <ul className="mt-4 space-y-2 text-sm text-slate-300">
